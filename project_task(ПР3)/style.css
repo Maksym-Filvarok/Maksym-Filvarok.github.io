@@ -29,7 +29,7 @@ img {
 
 header {
 	height: 138px;
-	background-image: url("C:/Users/Maxymilian/Downloads/project_task/project_task/assets/images/header.png"); /* Додає фонове зображення */
+	background-image: url("https://Maksym-Filvarok.github.io/project_task(ПР3)/images/header.png"); /* Додає фонове зображення */
 	background-repeat: no-repeat; /* Забороняє повторення фонового зображення */
 	background-size: contain; /* Масштабує фон так, щоб він повністю помістився */
 	background-position: center; /* Центрує фонове зображення */
