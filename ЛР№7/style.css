@@ -1,0 +1,173 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.catalog-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  width: 1214px;
+  height: 465px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.product {
+  width: 260px;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  padding: 20px 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.category {
+  text-transform: uppercase;
+  font-size: 19px;
+  color: #666;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.category a {
+  text-decoration: none;
+  color: #444;
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 5px 0;
+  display: block;
+}
+
+.product-name:hover {
+  color: #0077cc;
+}
+
+.price {
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 6px;
+}
+
+.new-price {
+  color: #000;
+}
+
+.btn {
+  background: #ffd600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background: #ffca00;
+}
+
+.btn.disabled {
+  background: #e91e63;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.sticker {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 55px;
+  height: 55px;
+  background: green;
+  color: white;
+  border-radius: 50%;
+  font-size: 9px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.sticker.hit {
+  background: #03a9f4;
+}
+
+.swipe {
+  position: absolute;
+  top: 98px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  line-height: 36px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.swipe_left {
+  left: -20px;
+}
+
+.swipe_right {
+  right: -20px;
+}
