@@ -36,16 +36,16 @@ body {
 
 /* Фото */
 .avatar {
-	width: 200px;
-	height: 200px;
-	overflow: hidden;
-	border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
   margin-left: 20px;
   margin-bottom: 20px;
 }
 .image {
-	display: block;
-	width: 100%;
+    display: block;
+    width: 100%;
 }
 
 /* Ім'я та посада */
@@ -150,4 +150,74 @@ body {
 .btn:hover{
     background:#000;
     color:#fff;
+}
+
+/* Стилі для іконок */
+/* Стилі для іконок */
+.icon {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.icon-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.icon-link:hover .icon {
+    transform: scale(1.2);
+}
+
+/* Світлі кольори іконок */
+.icon-telegram {
+    fill: #27a6e6;
+}
+
+.icon-instagram {
+    fill: #fd01ba;
+}
+
+.icon-facebook {
+    fill: #0166ff;
+}
+
+/* Ховер ефекти */
+.icon-link:hover .icon-telegram {
+    fill: #00e5ff;
+}
+
+.icon-link:hover .icon-instagram {
+    fill: #ff3d6e;
+}
+
+.icon-link:hover .icon-facebook {
+    fill: #3a66e0;
+}
+
+/* Стилі для контейнера іконок */
+.social-icons {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-icons h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+    color: white;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
 }
