@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenLife Recipes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">GreenLife</div>
+    <nav class="nav">
+      <a href="#">Продукти</a>
+      <a href="#">Рецепти</a>
+      <a href="#">Блог</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="recipes">
+      <h2>Смачні ідеї від шеф кухара Фільварка Максима</h2>
+      <div class="recipe-cards">
+        <div class="card">
+          <img src="img/soup.jpg" alt="Рецепт 1" />
+          <h3>Суп овочевий</h3>
+          <ul>
+            <li>Морква</li>
+            <li>Картопля</li>
+            <li>Цибуля</li>
+          </ul>
+          <p>Час приготування: 30 хв</p>
+        </div>
+        <div class="card">
+          <img src="img/salat.jpg" alt="Рецепт 2" />
+          <h3>Салат з тунцем</h3>
+          <ul>
+            <li>Тунець</li>
+            <li>Огірок</li>
+            <li>Кукурудза</li>
+          </ul>
+          <p>Час приготування: 15 хв</p>
+        </div>
+        <div class="card">
+          <img src="img/pasta.jpg" alt="Рецепт 3" />
+          <h3>Паста з соусом</h3>
+          <ul>
+            <li>Макарони</li>
+            <li>Помідори</li>
+            <li>Базилік</li>
+          </ul>
+          <p>Час приготування: 25 хв</p>
+        </div>
+        <div class="card">
+          <img src="img/ryzoto.jpg" alt="Рецепт 4" />
+          <h3>Різото</h3>
+          <ul>
+            <li>Гриби</li>
+            <li>Броколі</li>
+            <li>Морква</li>
+          </ul>
+          <p>Час приготування: 20 хв</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Здорове харчування разом з Фільварком Максимом</p>
+    <p>&copy; <span id="year"></span></p>
+  </footer>
+
+  <!--Актуальний рік-->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Зменшення висоти шапки при скролі
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('small');
+      } else {
+        header.classList.remove('small');
+      }
+    });
+  </script>
+</body>
+</html>
