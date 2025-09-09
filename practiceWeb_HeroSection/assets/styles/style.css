@@ -20,7 +20,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background-image: url('practiceWeb_HeroSection/assets/images/hero.png');
+    background-image: url('https://Maksym-Filvarok.github.io/practiceWeb_HeroSection/assets/images/hero.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
@@ -455,4 +455,5 @@ ul {
 
 
 /*-----------End of Media Queries---------------*/
+
 
