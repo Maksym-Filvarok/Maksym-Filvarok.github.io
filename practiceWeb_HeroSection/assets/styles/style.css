@@ -198,7 +198,7 @@ ul {
     flex-direction: column; 
     justify-content: center; 
     align-items: flex-start; 
-    gap: 60px;
+    gap: 30px;
     width: 288px;
     max-width: 595px; 
     padding: 20px; 
@@ -241,11 +241,11 @@ ul {
     
 .booking-form .btn-book { 
     width: 100%; 
-    height: 128px; 
+    height: 64px; 
     padding: 40px 20px; 
     background-color: var(--main-cover-color); 
     color: #fff; 
-    font-size: 36px; 
+    font-size: 20px; 
     font-weight: 500; 
     border: none; 
     border-radius: 0; 
@@ -455,6 +455,7 @@ ul {
 
 
 /*-----------End of Media Queries---------------*/
+
 
 
 
