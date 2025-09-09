@@ -211,7 +211,7 @@ ul {
     position: absolute; 
     left: 50%; 
     transform: translateX(-50%); 
-    bottom: 30px; 
+    bottom: -130px; 
     overflow: hidden;
 }
 
@@ -455,6 +455,7 @@ ul {
 
 
 /*-----------End of Media Queries---------------*/
+
 
 
 
