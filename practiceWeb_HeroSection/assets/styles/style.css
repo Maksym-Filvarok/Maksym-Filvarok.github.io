@@ -16,7 +16,11 @@
 
 .hero-section {
     transition: background-position 0.5s ease;
-    min-height: 100vh;
+    min-height: 1210px;
+    background-size: 1210px auto;
+    background-position: center center; 
+    background-size: cover; 
+    background-position: center;
     position: relative;
     display: flex;
     align-items: center;
@@ -28,7 +32,7 @@
 
 .hero-content {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 20px;
     transform: translate(0, -50%);
     text-align: left;
@@ -211,7 +215,7 @@ ul {
     position: absolute; 
     left: 50%; 
     transform: translateX(-50%); 
-    bottom: -130px; 
+    bottom: 350px; 
     overflow: hidden;
 }
 
@@ -346,7 +350,7 @@ ul {
 @media screen and (min-width: 1152px) {
 
     .hero-content {
-        top: 35%;
+        top: 23%;
         justify-content: flex-start;
     }
     .hero-content h1 {
@@ -384,12 +388,12 @@ ul {
         align-items: center;
     }
     .booking-form {
-        position: fixed;  
+        position: relative;  
         width: 100%;
         max-width: 856px;           
         height: 176px;
         left: 0px;
-        top: 70%; 
+        bottom: -190px; 
         transform: translateY(-70%); 
         display: flex;
         flex-direction: row;
@@ -455,6 +459,7 @@ ul {
 
 
 /*-----------End of Media Queries---------------*/
+
 
 
 
