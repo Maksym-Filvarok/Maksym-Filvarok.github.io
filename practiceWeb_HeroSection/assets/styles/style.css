@@ -20,7 +20,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background-image: url('C:/Users/Maxymilian/Downloads/WEB/assets/images/hero.png');
+    background-image: url('assets/images/hero.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
@@ -449,6 +449,7 @@ ul {
         transform: translateY(-90%); 
     }
 }
+
 
 
 
