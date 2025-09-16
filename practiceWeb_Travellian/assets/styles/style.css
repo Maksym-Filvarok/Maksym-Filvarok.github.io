@@ -29,7 +29,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background-image: url('assets/images/hero.png');
+    background-image: url('practiceWeb_Travellian/assets/images/hero.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left bottom;
@@ -1523,4 +1523,5 @@ footer {
         max-width: calc(100% / var(--tp-visible)); 
     }
 }
+
 /*-----------End of Media Queries---------------*/
