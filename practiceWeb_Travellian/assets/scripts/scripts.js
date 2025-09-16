@@ -51,6 +51,127 @@ function initGallery(sectionSelector, wrapperSelector, itemSelector) {
     wrapper.style.transition = 'none';
     requestAnimationFrame(update);
   });
+
+  wrapper.style.touchAction = 'pan-y';
+
+  let isDown = false;
+  let startX = 0;
+  let startTranslate = 0;
+  let pointerId = null;
+  let startTime = 0;
+
+  const getCurrentTranslate = () => -current * slideW;
+
+  function onStart(clientX, id) {
+    isDown = true;
+    pointerId = id ?? null;
+    startX = clientX;
+    startTranslate = getCurrentTranslate();
+    startTime = Date.now();
+    wrapper.style.transition = 'none';
+  }
+
+  function onMove(clientX) {
+    if (!isDown) return;
+    const dx = clientX - startX;
+    wrapper.style.transform = `translateX(${startTranslate + dx}px)`;
+  }
+
+  function onEnd(clientX) {
+    if (!isDown) return;
+    isDown = false;
+    const dx = clientX - startX;
+    const dt = Date.now() - startTime;
+    const threshold = Math.min(slideW * 0.2, 80);
+
+    if (Math.abs(dx) > threshold || (Math.abs(dx) > 20 && dt < 250)) {
+      if (dx < 0) {
+        current = Math.min(current + 1, items.length - 1);
+      } else {
+        current = Math.max(current - 1, 0);
+      }
+    }
+    wrapper.style.transition = 'transform 0.45s cubic-bezier(.22,.9,.33,1)';
+    update();
+  }
+
+  // Touch events
+  wrapper.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 1) return;
+    onStart(e.touches[0].clientX);
+  }, {passive: true});
+
+  wrapper.addEventListener('touchmove', (e) => {
+    if (!isDown || e.touches.length > 1) return;
+
+    const touch = e.touches[0];
+    const dx = Math.abs(touch.clientX - startX);
+  
+    if (dx > 8) e.preventDefault();
+    onMove(touch.clientX);
+  }, {passive: false});
+
+  wrapper.addEventListener('touchend', (e) => {
+    const touch = e.changedTouches[0];
+    onEnd(touch.clientX);
+  });
+
+  wrapper.addEventListener('pointerdown', (e) => {
+
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    wrapper.setPointerCapture(e.pointerId);
+    onStart(e.clientX, e.pointerId);
+  });
+
+  wrapper.addEventListener('pointermove', (e) => {
+    if (!isDown || (pointerId !== null && e.pointerId !== pointerId)) return;
+    onMove(e.clientX);
+  });
+
+  function pointerUpHandler(e) {
+    if (pointerId !== null && e.pointerId !== pointerId) return;
+    try { wrapper.releasePointerCapture(e.pointerId); } catch (err) {}
+    onEnd(e.clientX);
+    pointerId = null;
+  }
+  wrapper.addEventListener('pointerup', pointerUpHandler);
+  wrapper.addEventListener('pointercancel', pointerUpHandler);
+
+}
+
+function enableDragToScroll(wrapper) {
+  if (!wrapper) return;
+  wrapper.style.touchAction = 'pan-y'; 
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let pointerId = null;
+
+  wrapper.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    isDown = true;
+    pointerId = e.pointerId;
+    wrapper.setPointerCapture(pointerId);
+    startX = e.clientX;
+    scrollLeft = wrapper.scrollLeft;
+    wrapper.classList.add('is-dragging'); 
+  });
+
+  wrapper.addEventListener('pointermove', (e) => {
+    if (!isDown || e.pointerId !== pointerId) return;
+    const dx = e.clientX - startX;
+    wrapper.scrollLeft = scrollLeft - dx;
+  });
+
+  function up(e) {
+    if (!isDown || e.pointerId !== pointerId) return;
+    isDown = false;
+    try { wrapper.releasePointerCapture(e.pointerId); } catch (err) {}
+    pointerId = null;
+    wrapper.classList.remove('is-dragging');
+  }
+  wrapper.addEventListener('pointerup', up);
+  wrapper.addEventListener('pointercancel', up);
 }
 
 document.querySelectorAll('.tp-section').forEach(section => {
@@ -91,6 +212,7 @@ document.querySelectorAll('.tp-section').forEach(section => {
     });
   }
 
+  enableDragToScroll(wrapper);
 });
 
 /* Ініціалізація */
