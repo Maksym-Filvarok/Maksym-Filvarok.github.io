@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Завдання з Date()</title>
+</head>
+<body>
+
+<script>
+  // ========== Завдання 1 ==========
+  document.write('<section><h2>1) Створити Date на 20.02.2021 03:12 (місцевий час)</h2>');
+
+  const dt1 = new Date(2021, 1, 20, 3, 12);
+  document.write(`<p>Обʼєкт Date: <code>new Date(2021, 1, 20, 3, 12)</code></p>`);
+  document.write(`<p>toString(): ${dt1.toString()}</p>`);
+  document.write(`<p>toLocaleString(uk-UA): ${dt1.toLocaleString('uk-UA')}</p>`);
+  document.write('</section>');
+
+  // ========== Завдання 2 ==========
+  document.write('<section><h2>2) Функція getWeekDay(date) — короткі назви днів</h2>');
+
+  function getWeekDay(date) {
+    const names = ['НД','ПН','ВТ','СР','ЧТ','ПТ','СБ']; // 0 => НД, 1 => ПН, ...
+    return names[date.getDay()];
+  }
+
+  const exampleDate = new Date(2012, 0, 3); // 3 січня 2012
+  document.write(`<p>Дата: ${exampleDate.toLocaleDateString('uk-UA')} — getWeekDay() => <strong>${getWeekDay(exampleDate)}</strong> (очікується 'ВТ')</p>`);
+
+  const today = new Date();
+  document.write(`<p>Сьогодні: ${today.toLocaleDateString('uk-UA')} — день: <strong>${getWeekDay(today)}</strong></p>`);
+  document.write('</section>');
+
+  // ========== Завдання 3 ==========
+  document.write('<section><h2>3) Функція getLastDayOfMonth(year, month)</h2>');
+
+  function getLastDayOfMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  document.write(`<p>getLastDayOfMonth(2020, 1) = <strong>${getLastDayOfMonth(2020, 1)}</strong> (очікується 29)</p>`);
+  // ще приклади:
+  document.write(`<p>Січень 2021: ${getLastDayOfMonth(2021,0)}</p>`);
+  document.write(`<p>Лютий 2021: ${getLastDayOfMonth(2021,1)}</p>`);
+  document.write(`<p>Квітень 2021: ${getLastDayOfMonth(2021,3)}</p>`);
+  document.write('</section>');
+
+  // ========== Завдання 4.1 ==========
+  document.write('<section><h2>4) Функція getSecondsToTomorrow()</h2>');
+
+  function getSecondsToTomorrow() {
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // опівніч завтра
+    const diffMs = tomorrow - now;
+    return Math.floor(diffMs / 1000);
+  }
+
+  document.write(`<p>Секунд до завтра: <strong>${getSecondsToTomorrow()}</strong></p>`);
+  document.write('</section>');
+
+  // ========== Завдання 4.2 ==========
+  document.write('<section><h2>5) Функція formatDate(date)</h2>');
+
+  function pad2(num) {
+    return String(num).padStart(2, '0');
+  }
+
+  function formatDate(date) {
+    const diffMs = Date.now() - date.getTime();
+    if (diffMs < 1000) {
+      return 'прямо зараз';
+    }
+    const diffSec = Math.floor(diffMs / 1000);
+    if (diffSec < 60) {
+      return `${diffSec} сек. назад`;
+    }
+    const diffMin = Math.floor(diffSec / 60);
+    if (diffMin < 60) {
+      return `${diffMin} хв. назад`;
+    }
+    const d = date;
+    const day = pad2(d.getDate());
+    const month = pad2(d.getMonth() + 1);
+    const year2 = pad2(d.getFullYear() % 100);
+    const hours = pad2(d.getHours());
+    const minutes = pad2(d.getMinutes());
+    return `${day}.${month}.${year2} ${hours}:${minutes}`;
+  }
+
+  document.write('<p>Тести formatDate()</p>');
+  // < 1 сек
+  document.write(`<p>Менше 1 сек: ${formatDate(new Date(Date.now() - 500))}</p>`);
+  // кілька секунд
+  document.write(`<p>5 сек тому: ${formatDate(new Date(Date.now() - 5 * 1000))}</p>`);
+  // кілька хвилин
+  document.write(`<p>5 хв тому: ${formatDate(new Date(Date.now() - 5 * 60 * 1000))}</p>`);
+  const old = new Date(2021,1,20,3,12);
+  document.write(`<p>Стара дата (${old.toLocaleString('uk-UA')}): ${formatDate(old)}</p>`);
+
+  document.write('</section>');
+</script>
+
+</body>
+</html>

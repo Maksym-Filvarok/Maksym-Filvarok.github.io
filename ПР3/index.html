@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Практичні приклади</title>
+</head>
+<body>
+  <section>
+    <script>
+      // Приклад 1:
+      (function(){
+        const today = new Date();
+        const newYear = new Date(today.getFullYear() + 1, 0, 1);
+
+        document.write('<h2>Приклад 1 — різниця між сьогоднішньою датою і наступним Новим роком</h2>');
+        document.write(`<p>Сьогодні: ${today.toLocaleString('uk-UA')}</p>`);
+        document.write(`<p>Новий рік (початок): ${newYear.toLocaleString('uk-UA')}</p>`);
+
+        const msDiff = newYear - today; // мс
+        const days  = Math.floor(msDiff / (24 * 60 * 60 * 1000));
+        const hours = Math.floor((msDiff / (60 * 60 * 1000)) % 24);
+        const mins  = Math.floor((msDiff / (60 * 1000)) % 60);
+        const secs  = Math.floor((msDiff / 1000) % 60);
+
+        document.write(`<p><strong>До нового року залишилось:</strong> ${days} днів ${hours} год ${mins} хв ${secs} сек</p>`);
+      })();
+    </script>
+  </section>
+
+  <section>
+    <script>
+      // Приклад 2
+      (function(){
+        const now = new Date();
+
+        const fullOptions = {
+          era: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          weekday: 'long',
+          timeZone: 'UTC',
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric'
+        };
+
+        const shortOptions = {
+          year: '2-digit',
+          month: 'short',
+          day: '2-digit',
+          weekday: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+
+        document.write('<h2>Приклад 2 — форматування дати через toLocaleString()</h2>');
+        document.write(`<p>Сировий (toString): ${now.toString()}</p>`);
+
+        document.write('<h3>Повний формат (UTC)</h3>');
+        document.write(`<p>ar-EG: ${now.toLocaleString('ar-EG', fullOptions)}</p>`);
+        document.write(`<p>en-US: ${now.toLocaleString('en-US', fullOptions)}</p>`);
+        document.write(`<p>en-GB: ${now.toLocaleString('en-GB', fullOptions)}</p>`);
+        document.write(`<p>uk-UA: ${now.toLocaleString('uk-UA', fullOptions)}</p>`);
+
+        document.write('<h3>Короткий формат (2-digit / short)</h3>');
+        document.write(`<p>ar-EG: ${now.toLocaleString('ar-EG', shortOptions)}</p>`);
+        document.write(`<p>en-GB: ${now.toLocaleString('en-GB', shortOptions)}</p>`);
+        document.write(`<p>ru-RU: ${now.toLocaleString('ru-RU', shortOptions)}</p>`);
+        document.write(`<p>uk-UA: ${now.toLocaleString('uk-UA', shortOptions)}</p>`);
+      })();
+    </script>
+  </section>
+
+  <!--Приклад 3-->
+  <section>
+    <script>
+      (function(){
+        const year = 2025;
+        const fridayMonths = [];
+        for (let m = 0; m < 12; m++){
+          const d = new Date(year, m, 13);
+          if (d.getDay() === 5) {
+            fridayMonths.push(d.toLocaleString('uk-UA', { month: 'long' }));
+          }
+        }
+
+        document.write('<h2>Приклад 3 — у яких місяцях 13-е випадає на п\'ятницю</h2>');
+        document.write(`<p>Рік: ${year}</p>`);
+        if (fridayMonths.length === 0) {
+          document.write("<p>У цьому році немає п'ятниць 13-го.</p>");
+        } else {
+          document.write('<p>П\'ятниця 13-го випадає на такі місяці:</p>');
+          document.write('<ul>');
+          for (const m of fridayMonths) document.write(`<li>${m}</li>`);
+          document.write('</ul>');
+        }
+      })();
+    </script>
+
+    <div style="margin-top:12px">
+      <h3>Інтерактивно: оберіть рік</h3>
+      <select id="yearSelect" aria-label="Оберіть рік"></select>
+      <div id="interactiveOutput" style="margin-top:10px;padding:10px;border-radius:6px;background:#fafafa;border:1px dashed #eee"></div>
+    </div>
+
+    <script>
+      (function(){
+        const sel = document.getElementById('yearSelect');
+        const out = document.getElementById('interactiveOutput');
+        // Діапазон років — змінити за потреби
+        const start = 2018, end = 2030;
+        for (let y = start; y <= end; y++) {
+          const opt = document.createElement('option'); opt.value = y; opt.textContent = y; sel.appendChild(opt);
+        }
+
+        function showFriday13(y){
+          const months = [];
+          for (let m = 0; m < 12; m++){
+            const d = new Date(y, m, 13);
+            if (d.getDay() === 5) months.push(d.toLocaleString('uk-UA', { month: 'long' }));
+          }
+          let html = `<p>Рік: <strong>${y}</strong></p>`;
+          if (months.length === 0) html += `<p>У цьому році немає п'ятниць 13-го.</p>`;
+          else {
+            html += '<p>П\'ятниця 13-го випадає на такі місяці:</p><ul>';
+            for (const m of months) html += `<li>${m}</li>`;
+            html += '</ul>';
+          }
+          out.innerHTML = html;
+        }
+
+        sel.addEventListener('change', function(){ showFriday13(parseInt(this.value,10)); });
+        showFriday13(parseInt(sel.value,10));
+      })();
+    </script>
+  </section>
+</body>
+</html>
