@@ -74,7 +74,7 @@ nav ul li a:hover {
 }
 
 .hero {
-	background: linear-gradient(rgba(43, 65, 79, 0.85), rgba(43, 65, 79, 0.9)), url("C:/Users/Maxymilian/Downloads/practiceWeb_Travellian/assets/images/hero.png");
+	background: linear-gradient(rgba(43, 65, 79, 0.85), rgba(43, 65, 79, 0.9)), url("https://maksym-filvarok.github.io/Travellian/assets/images/hero.webp");
 	background-size: cover;
 	background-position: center;
 	color: var(--white);
@@ -805,4 +805,5 @@ nav ul li a:hover {
         top: 16px;
         right: 16px;
     }
+
 }
