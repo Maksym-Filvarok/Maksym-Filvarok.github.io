@@ -328,7 +328,7 @@ body.splash-hidden #splash-screen {
 	position: relative;
 	display: flex;
 	align-items: center;
-	background-image: url("C:/Users/Maxymilian/Downloads/practiceWeb_Travellian/assets/images/hero.png");
+	background-image: url("https://maksym-filvarok.github.io/Travellian/assets/images/hero.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: left bottom;
@@ -1847,4 +1847,5 @@ footer {
 		flex: 0 0 calc(100% / var(--tp-visible));
 		max-width: calc(100% / var(--tp-visible));
 	}
+
 }
