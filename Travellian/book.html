@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">Бронювання турів - Подорожі по всьому світу</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/book.css">
+    <link rel="stylesheet" href="assets/styles/general.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+              <div class="logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo" data-i18n="logo_alt">
+                  <a href="index.html"></a>
+              </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#popular" data-i18n="nav_tours">Tours</a></li>
+                        <li><a href="#hotels" data-i18n="nav_hotels">Hotels</a></li>
+                        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+                        <li>
+                          <div class="language-switcher">
+                              <button class="lang-btn active" data-lang="en">EN</button>
+                              <button class="lang-btn" data-lang="uk">UK</button> 
+                          </div>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-i18n="hero_title_book">Discover the World with Us</h1>
+            <p data-i18n="hero_subtitle_book">Best travel destinations from around the world and comfortable hotels for your perfect vacation</p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="container">
+        <div class="booking-form">
+            <h2 class="form-title" data-i18n="booking_title"><i class="fas fa-search"></i> Find Your Perfect Tour</h2>
+            <form id="booking-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="destination" data-i18n="booking_destination_label">Destination</label>
+                        <select id="destination" class="form-control">
+                            <option value="" data-i18n="booking_destination_placeholder">Choose destination</option>
+                            <option value="italy" data-i18n="booking_destination_italy">Italy</option>
+                            <option value="greece" data-i18n="booking_destination_greece">Greece</option>
+                            <option value="spain" data-i18n="booking_destination_spain">Spain</option>
+                            <option value="france" data-i18n="booking_destination_france">France</option>
+                            <option value="thailand" data-i18n="booking_destination_thailand">Thailand</option>
+                            <option value="japan" data-i18n="booking_destination_japan">Japan</option>
+                            <option value="usa" data-i18n="booking_destination_usa">USA</option>
+                            <option value="egypt" data-i18n="booking_destination_egypt">Egypt</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-in" data-i18n="booking_checkin_label">Check-in Date</label>
+                        <input type="date" id="check-in" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out" data-i18n="booking_checkout_label">Check-out Date</label>
+                        <input type="date" id="check-out" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests" data-i18n="booking_guests_label">Number of Guests</label>
+                        <select id="guests" class="form-control">
+                            <option value="1" data-i18n="booking_guests_1">1 guest</option>
+                            <option value="2" selected data-i18n="booking_guests_2">2 guests</option>
+                            <option value="3" data-i18n="booking_guests_3">3 guests</option>
+                            <option value="4" data-i18n="booking_guests_4">4 guests</option>
+                            <option value="5+" data-i18n="booking_guests_5">5+ guests</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block" data-i18n="booking_search_button">Find Tours</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html" data-i18n="breadcrumb_home">Home</a>
+                <span class="separator">></span>
+                <a href="book.html" data-i18n="breadcrumb_booking">Booking</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Popular Tours Section -->
+    <section id="popular" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="tours_section_title">Популярні тури по всьому світу</h2>
+            <div class="tours-grid">
+                <!-- Tour 1 -->
+                <div class="tour-card" data-location="Рим, Італія" data-lat="41.9028" data-lng="12.4964" data-price="8500" data-duration="7 днів" data-type="тур" data-features="Екскурсії" data-image="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tour-content">
+                        <h3 class="tour-title" data-i18n="tour1_title">Римські канікули</h3>
+                        <div class="tour-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="tour1_location">Рим, Італія</span>
+                        </div>
+                        <p class="tour-description" data-i18n="tour1_description">Неймовірна подорож до Вічного міста з відвідуванням Колізею, Ватикану та інших історичних пам'яток.</p>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> <span data-i18n="tour1_duration">7 днів</span></span>
+                            <span><i class="fas fa-walking"></i> <span data-i18n="tour1_features">Екскурсії</span></span>
+                        </div>
+                        <div class="tour-price" data-i18n="tour1_price">8 500 грн</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+                
+                <!-- Tour 2 -->
+                <div class="tour-card" data-location="Афіни, Греція" data-lat="37.9838" data-lng="23.7275" data-price="7200" data-duration="6 днів" data-type="тур" data-features="Круїз" data-image="https://images.unsplash.com/photo-1599423217192-34da246be9e8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1599423217192-34da246be9e8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="tour-content">
+                        <h3 class="tour-title" data-i18n="tour2_title">Міфічна Греція</h3>
+                        <div class="tour-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="tour2_location">Афіни, Греція</span>
+                        </div>
+                        <p class="tour-description" data-i18n="tour2_description">Подорож до колыбелі європейської цивілізації з відвідуванням Акрополя та островів Егейського моря.</p>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> <span data-i18n="tour2_duration">6 днів</span></span>
+                            <span><i class="fas fa-ship"></i> <span data-i18n="tour2_features">Круїз</span></span>
+                        </div>
+                        <div class="tour-price" data-i18n="tour2_price">7 200 грн</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+                
+                <!-- Tour 3 -->
+                <div class="tour-card" data-location="Барселона, Іспанія" data-lat="41.3851" data-lng="2.1734" data-price="9100" data-duration="8 днів" data-type="тур" data-features="Гастрономія" data-image="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tour-content">
+                        <h3 class="tour-title" data-i18n="tour3_title">Іспанська пригода</h3>
+                        <div class="tour-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="tour3_location">Барселона, Іспанія</span>
+                        </div>
+                        <p class="tour-description" data-i18n="tour3_description">Знайомство з архітектурою Гауді, іспанською кухнею та відпочинок на середземноморських пляжах.</p>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> <span data-i18n="tour3_duration">8 днів</span></span>
+                            <span><i class="fas fa-utensils"></i> <span data-i18n="tour3_features">Гастрономія</span></span>
+                        </div>
+                        <div class="tour-price" data-i18n="tour3_price">9 100 грн</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title" data-i18n="hotels_section_title">Рекомендовані готелі</h2>
+            <div class="hotels-grid">
+                <!-- Hotel 1 -->
+                <div class="hotel-card" data-location="Париж, Франція" data-lat="48.8566" data-lng="2.3522" data-price="5400" data-rating="5" data-type="готель" data-image="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <div class="hotel-img" style="background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title" data-i18n="hotel1_title">Hotel de Paris</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="hotel1_location">Париж, Франція</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="tour-description" data-i18n="hotel1_description">Розкішний готель у самому серці Парижа з видом на Ейфелеву вежу та висококласним сервісом.</p>
+                        <div class="tour-price" data-i18n="hotel1_price">5 400 грн/ніч</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+                
+                <!-- Hotel 2 -->
+                <div class="hotel-card" data-location="Токіо, Японія" data-lat="35.6762" data-lng="139.6503" data-price="6200" data-rating="4.5" data-type="готель" data-image="https://images.unsplash.com/photo-1679991811739-40f636c065a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="hotel-img" style="background-image: url('https://images.unsplash.com/photo-1679991811739-40f636c065a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title" data-i18n="hotel2_title">Sakura Grand Hotel</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="hotel2_location">Токіо, Японія</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="tour-description" data-i18n="hotel2_description">Сучасний готель у центрі Токіо, що поєднує японські традиції з найвищим рівнем комфорту.</p>
+                        <div class="tour-price" data-i18n="hotel2_price">6 200 грн/ніч</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+                
+                <!-- Hotel 3 -->
+                <div class="hotel-card" data-location="Нью-Йорк, США" data-lat="40.7128" data-lng="-74.0060" data-price="5800" data-rating="4" data-type="готель" data-image="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <div class="hotel-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="hotel-content">
+                        <h3 class="hotel-title" data-i18n="hotel3_title">Manhattan Skyline</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="hotel3_location">Нью-Йорк, США</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="tour-description" data-i18n="hotel3_description">Готель з панорамним видом на Мангеттен, розташований поблизу Таймс-сквер та Центрального парку.</p>
+                        <div class="tour-price" data-i18n="hotel3_price">5 800 грн/ніч</div>
+                        <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="map_section_title">Знаходження на карті</h2>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <div class="map-info">
+                <div class="map-info-text">
+                    <h3 data-i18n="map_selected_location">Обраний напрямок: <span id="selected-location" data-i18n="map_select_default">Оберіть тур або готель</span></h3>
+                    <p id="location-details" data-i18n="map_instructions">Натисніть на будь-який тур або готель, щоб побачити його розташування на карті</p>
+                </div>
+                <div>
+                    <span id="location-price" class="tour-price" style="display: none;"></span>
+                    <a href="#" class="btn" id="book-from-map" style="display: none;" data-i18n="book_button">Забронювати</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed View Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-image" class="modal-image"></div>
+                <div class="modal-info">
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="modal-location"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <span id="modal-type"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="far fa-clock"></i>
+                            <span id="modal-duration"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-star"></i>
+                            <span id="modal-rating"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-walking"></i>
+                            <span id="modal-features"></span>
+                        </div>
+                    </div>
+                    <p id="modal-description" class="modal-description"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="modal-price" class="tour-price"></div>
+                <a href="#" class="btn" data-i18n="book_button">Забронювати</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div id="kontakt" class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Logo.png" alt="Travellian Logo" class="logo-img" data-i18n="logo_alt">
+                    <p class="copy" data-i18n="footer_copyright">Copyright © Travellian 2025 All rights reserved</p>
+                </div>
+                <div class="footer-column">
+                    <h3 data-i18n="footer_about_title">Про нас</h3>
+                    <p data-i18n="footer_about_text">Ми - туристична агенція, яка спеціалізується на організації незабутніх подорожей по всьому світу. Наша мета - зробити ваш відпочинок комфортним та незабутнім.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-i18n="footer_links_title">Посилання</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav_home">Головна</a></li>
+                        <li><a href="#popular" data-i18n="nav_tours">Тури</a></li>
+                        <li><a href="#hotels" data-i18n="nav_hotels">Готелі</a></li>
+                        <li><a href="blog.html" data-i18n="nav_blog">Блог</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-i18n="footer_contacts_title">Контакти</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">вул. Хрещатик, 22, Київ</span></li>
+                        <li><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+38 (044) 123-45-67</span></li>
+                        <li><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@worldtravel.com</span></li>
+                        <li><i class="far fa-clock"></i> <span data-i18n="footer_hours">Пн-Пт: 9:00-20:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-i18n="footer_bottom_copyright">&copy; 2026 WorldTravel. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+        </svg>
+    </button>
+        <script src="assets/scripts/book.js"></script>
+    <script src="assets/scripts/translations.js"></script>
+    <script src="assets/scripts/language-switcher.js"></script>
+</body>
+</html>

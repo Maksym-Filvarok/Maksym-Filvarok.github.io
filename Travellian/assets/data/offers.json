@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Lisbon, Portugal",
+    "ariaLabel": "Lisbon, Portugal - special offer",
+    "image": "assets/images/offer-1.jpg",
+    "alt": "Lisbon balcony",
+    "rating": 5,
+    "description": "5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.",
+    "price": 500
+  },
+  {
+    "title": "Athens, Greece",
+    "ariaLabel": "Athens, Greece - special offer",
+    "image": "assets/images/offer-2.jpg",
+    "alt": "Athens view",
+    "rating": 4,
+    "description": "5 nights and 4 days, rich cultural program, guided tours and breakfasts included.",
+    "price": 480
+  },
+  {
+    "title": "Barcelona, Spain",
+    "ariaLabel": "Barcelona, Spain - special offer",
+    "image": "assets/images/offer-3.jpg",
+    "alt": "Barcelona street",
+    "rating": 4,
+    "description": "City break with museum passes, 4-star hotel, breakfasts included.",
+    "price": 420
+  },
+  {
+    "title": "Rome, Italy",
+    "ariaLabel": "Rome, Italy - special offer",
+    "image": "assets/images/offer-4.jpg",
+    "alt": "Rome panorama",
+    "rating": 5,
+    "description": "Explore ancient Rome: tours, transfers and 5-star accommodation included.",
+    "price": 550
+  },
+  {
+    "title": "Prague, Czechia",
+    "ariaLabel": "Prague, Czechia - special offer",
+    "image": "assets/images/offer-5.jpg",
+    "alt": "Prague old town",
+    "rating": 4,
+    "description": "Historic city getaway with breakfast and guided city walk.",
+    "price": 390
+  }
+]

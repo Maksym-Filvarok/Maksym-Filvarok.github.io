@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Галерея конкурсу подорожей — Фіналісти</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/general.css">
+  <style>
+    :root{
+      --accent:#FF7757;
+      --dark:#2b414f;
+      --muted:#8aa0aa;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      margin:0;background:linear-gradient(180deg,var(--dark),#1f2d34 60%);
+      color:#e9fbff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+
+    /* HERO / PARALLAX */
+    .hero{
+      position:relative;overflow:hidden;min-height:44vh;display:flex;align-items:center;justify-content:center;
+      padding:6rem 1.25rem; text-align:center;
+    }
+    .hero__bg{
+      position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size:cover;background-position:center;transform:translateZ(0);will-change:transform;filter:brightness(.6) contrast(1.05);
+    }
+    .hero__overlay{position:relative;z-index:2;max-width:var(--max-width);width:100%;}
+    .hero h1{font-size:clamp(1.6rem,4vw,3rem);margin:0 0 .6rem;font-weight:800;letter-spacing:-0.02em}
+    .hero p{margin:0 auto;color:var(--muted);max-width:820px}
+
+    /* Contest ribbon */
+    .ribbon{display:inline-grid;grid-auto-flow:column;gap:.6rem;align-items:center;margin-top:1.3rem}
+    .ribbon .pill{background:linear-gradient(90deg,var(--accent),#ff9679);padding:.5rem .9rem;border-radius:999px;font-weight:700;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
+    .ribbon .sub{font-size:.95rem;color:var(--muted)}
+
+    /* Gallery */
+    .wrap{max-width:var(--max-width);margin:2.25rem auto;padding:0 1.25rem}
+
+    /* Finalists strip */
+    .finalists{
+      display:flex;gap:1rem;overflow-x:auto;padding:1rem;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(0,0,0,0.45);margin-bottom:1.25rem
+    }
+    .finalist{min-width:220px;border-radius:12px;overflow:hidden;position:relative;background:#071214}
+    .finalist__img{height:140px;background-size:cover;background-position:center}
+    .finalist__meta{padding:.8rem}
+    .finalist .label{position:absolute;left:10px;top:10px;background:var(--accent);padding:.35rem .55rem;border-radius:8px;font-weight:800;color:#fff}
+
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+    @media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:420px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));backdrop-filter:blur(6px);
+      transform-origin:center center;transition:transform .35s cubic-bezier(.2,.9,.2,1),box-shadow .35s;
+      box-shadow:0 8px 30px rgba(17,22,24,0.35);
+    }
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,0.55)}
+
+    .card__img{height:220px;background-size:cover;background-position:center}
+    .card__info{padding:1rem}
+    .meta{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+    .title{font-weight:700}
+    .entry-badge{background:var(--glass);padding:.35rem .5rem;border-radius:10px;font-weight:600;color:var(--accent);border:1px solid rgba(255,255,255,0.03)}
+
+    .vote-row{display:flex;align-items:center;gap:.6rem;margin-top:.75rem}
+    .vote-btn{padding:.45rem .75rem;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#ff9679);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 8px 18px rgba(255,119,87,0.14);transition:transform .18s}
+    .vote-btn:active{transform:scale(.98)}
+
+    .progress{flex:1;height:10px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border-radius:999px;overflow:hidden}
+    .progress__bar{height:100%;width:20%;background:linear-gradient(90deg,var(--accent),#ffb09a);transition:width .5s cubic-bezier(.2,.9,.2,1)}
+
+    /* Animated shine */
+    .card::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.04) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s;pointer-events:none}
+    .card:hover::after{transform:translateX(120%)}
+
+    /* Modal preview */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,10,13,0.6);backdrop-filter:blur(4px);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+    .modal.open{opacity:1;pointer-events:auto}
+    .modal__card{width:min(1100px,96%);max-height:88vh;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#0b1416,rgba(255,255,255,0.02));box-shadow:0 50px 120px rgba(7,10,12,0.8);display:grid;grid-template-columns:1fr 340px}
+    @media(max-width:900px){.modal__card{grid-template-columns:1fr}}
+
+    .modal__img{background-size:cover;background-position:center;min-height:60vh;position:relative;display:flex;align-items:flex-end}
+    .modal__img .frame{width:100%;padding:1.25rem}
+
+    .meta-side{padding:1.25rem;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    .meta-side h3{margin:0}
+    .meta-side p{color:var(--muted);margin-top:.5rem}
+    .controls{display:flex;gap:.5rem;margin-top:1rem}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:.6rem .8rem;border-radius:10px;color:#eaf7fb;cursor:pointer}
+
+    .close{position:absolute;right:10px;top:10px;background:rgba(0,0,0,0.25);border:0;color:#fff;padding:.45rem .6rem;border-radius:10px;cursor:pointer}
+
+    .nav-arrow{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 8px;pointer-events:none}
+    .nav-arrow button{pointer-events:auto;background:rgba(0,0,0,0.25);border:0;padding:.7rem;border-radius:12px;color:#fff;cursor:pointer}
+
+    /* Entry sticker */
+    .sticker{position:absolute;left:12px;top:12px;background:linear-gradient(180deg,var(--accent),#ff9b88);padding:.45rem .7rem;border-radius:10px;font-weight:800;color:#fff;transform:rotate(-6deg);box-shadow:0 8px 20px rgba(255,119,87,0.15)}
+
+    /* tiny animations */
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+    .floaty{animation:floaty 4s ease-in-out infinite}
+
+    /* scrollbar nicety for finalists */
+    .finalists::-webkit-scrollbar{height:8px}
+    .finalists::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.06);border-radius:999px}
+  </style>
+</head>
+<body>
+        <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+              <div class="logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo" data-i18n="logo_alt">
+                  <a href="index.html"></a>
+              </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#popular" data-i18n="nav_tours">Tours</a></li>
+                        <li><a href="#hotels" data-i18n="nav_hotels">Hotels</a></li>
+                        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+                        <li>
+                          <div class="language-switcher">
+                              <button class="lang-btn active" data-lang="en">EN</button>
+                              <button class="lang-btn" data-lang="uk">UK</button> 
+                          </div>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+  <header class="hero">
+    <div class="hero__bg" id="parallax"></div>
+    <div class="hero__overlay">
+      <h1>Фотоконкурс подорожей — Подавайте, діліться та голосуйте</h1>
+      <p>Огляньте найкращі знімки спільноти — кожне фото бере участь у конкурсі на головний приз. Пропонуємо перегляд із анімаціями та можливістю голосування.</p>
+      <div class="ribbon">
+        <div class="pill">💫 Головний приз: Подорож до Середземномор'я</div>
+        <div class="sub">8 фіналістів — голосування закінчується 12 грудня 2025</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Finalists visible strip -->
+    <section aria-label="Фіналісти" style="margin-bottom:.75rem">
+      <h2 style="margin:0 0 .6rem;color:#fff;font-weight:800">Фіналісти</h2>
+      <div class="finalists" id="finalistsStrip">
+        <!-- finalists inserted by script -->
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:0 0 .8rem;color:#fff;font-weight:800">Усі учасники</h2>
+      <div class="grid" id="gallery">
+        <!-- entries rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__card" role="dialog" aria-modal="true">
+      <div class="modal__img" id="modalImage">
+        <button class="close" id="close">Закрити ✕</button>
+        <div class="sticker floaty" id="modalSticker">Учасник #1</div>
+        <div class="nav-arrow">
+          <button id="prev">◀</button>
+          <button id="next">▶</button>
+        </div>
+      </div>
+      <aside class="meta-side">
+        <h3 id="modalTitle">Без назви</h3>
+        <p id="modalDesc">Чудовий кадр. Проголосуйте, щоб підтримати цього учасника та підняти його в рейтингу.</p>
+        <div class="controls">
+          <button class="vote-btn" id="modalVote">Проголосувати</button>
+          <button class="btn-ghost" id="modalShare">Поділитись</button>
+        </div>
+        <div style="margin-top:1rem">
+          <div style="font-size:.9rem;color:var(--muted);">Поточні голоси</div>
+          <div style="margin-top:.5rem;display:flex;gap:.6rem;align-items:center">
+            <div class="progress" style="flex:1"><div class="progress__bar" id="modalProgress" style="width:12%"></div></div>
+            <div id="modalVotes">12</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+        <footer>
+         <div class="container">
+            <div class="footer-content">
+               <div class="footer-logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo" class="logo-img" data-i18n="footer_logo_alt">
+                  <p class="copy" data-i18n="blog_footer_copyright">Copyright © Travellian 2020 All rights reserved</p>
+               </div>
+               <div class="footer-column">
+                  <h3 data-i18n="blog_footer_about_title">Про нас</h3>
+                  <p data-i18n="blog_footer_about_description">Ми - туристична агенція, яка спеціалізується на організації незабутніх подорожей по всьому світу. Наша мета - зробити ваш відпочинок комфортним та незабутнім.</p>
+                  <div class="social-links">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+               </div>
+               <div class="footer-column">
+                  <h3 data-i18n="blog_footer_links_title">Посилання</h3>
+                  <ul class="footer-links">
+                     <li><a href="index.html" data-i18n="blog_footer_links_home">Головна</a></li>
+                     <li><a href="book.html" data-i18n="blog_footer_links_tours">Тури</a></li>
+                     <li><a href="#newsletter" data-i18n="blog_footer_links_news">Новини</a></li>
+                  </ul>
+               </div>
+               <div id="kontakt" class="footer-column">
+                  <h3 data-i18n="blog_footer_contact_title">Контакти</h3>
+                  <ul class="footer-links">
+                     <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="blog_footer_contact_address">вул. Хрещатик, 22, Київ</span></li>
+                     <li><i class="fas fa-phone"></i> <span data-i18n="blog_footer_contact_phone">+38 (044) 123-45-67</span></li>
+                     <li><i class="fas fa-envelope"></i> <span data-i18n="blog_footer_contact_email">info@worldtravel.com</span></li>
+                     <li><i class="far fa-clock"></i> <span data-i18n="blog_footer_contact_hours">Пн-Пт: 9:00-20:00</span></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="copyright">
+               <p data-i18n="blog_copyright_text">&copy; 2025 WorldTravel. Всі права захищені.</p>
+            </div>
+         </div>
+      </footer>
+
+  <script>
+    // Дані фіналістів та учасників (8 фіналістів)
+    const entries = [
+      {id:1,title:'Сонце над скелями',desc:'Золота година на прибережних скелях.',img:'https://picsum.photos/seed/travel1/1600/1000',votes:128,finalist:true},
+      {id:2,title:'Сахарські дюни',desc:'Тиша та нескінченні піски.',img:'https://picsum.photos/seed/travel2/1600/1000',votes:96,finalist:true},
+      {id:3,title:'Смарагдове озеро',desc:'Кришталево чиста вода в горах.',img:'https://picsum.photos/seed/travel3/1600/1000',votes:142,finalist:true},
+      {id:4,title:'Міські вогні',desc:'Магія міста після заходу сонця.',img:'https://picsum.photos/seed/travel4/1600/1000',votes:77,finalist:true},
+      {id:5,title:'Схований залив',desc:'Секретна бухта, як з поштової листівки.',img:'https://picsum.photos/seed/travel5/1600/1000',votes:110,finalist:true},
+      {id:6,title:'Альпійський перевал',desc:'Туман та гірські стежки.',img:'https://picsum.photos/seed/travel6/1600/1000',votes:64,finalist:true},
+      {id:7,title:'Тропічний ранок',desc:'Перші промені крізь пальми.',img:'https://picsum.photos/seed/travel7/1600/1000',votes:88,finalist:true},
+      {id:8,title:'Криві дороги',desc:'Шлях, який веде до пригод.',img:'https://picsum.photos/seed/travel8/1600/1000',votes:54,finalist:true}
+    ]
+
+    const gallery = document.getElementById('gallery')
+    const finalistsStrip = document.getElementById('finalistsStrip')
+
+    // Render finalists prominently
+    entries.filter(e=>e.finalist).forEach((e,idx)=>{
+      const f = document.createElement('div')
+      f.className='finalist'
+      f.innerHTML = `
+        <div class='label'>#${e.id}</div>
+        <div class='finalist__img' style="background-image:url('${e.img}')" data-id='${e.id}'></div>
+        <div class='finalist__meta'>
+          <div style="font-weight:800">${e.title}</div>
+          <div style="font-size:.9rem;color:var(--muted)">${e.desc}</div>
+          <div style="display:flex;align-items:center;gap:.5rem;margin-top:.6rem">
+            <button class='vote-btn' data-id='${e.id}'>Проголосувати</button>
+            <div style='font-weight:700'>${e.votes}</div>
+          </div>
+        </div>
+      `
+      finalistsStrip.appendChild(f)
+      f.querySelector('.finalist__img').addEventListener('click', ()=>openModal(e.id))
+      f.querySelector('.vote-btn').addEventListener('click', ()=>vote(e.id))
+    })
+
+    // Render full gallery (also shows finalists among others)
+    entries.forEach(e=>{
+      const card = document.createElement('article')
+      card.className='card'
+      card.innerHTML = `
+        <div class='card__img' style="background-image:url('${e.img}')" data-id='${e.id}'></div>
+        <div class='card__info'>
+          <div class='meta'>
+            <div>
+              <div class='title'>${e.title}</div>
+              <div style='font-size:.9rem;color:var(--muted)'>${e.desc}</div>
+            </div>
+            <div class='entry-badge'>#${e.id}</div>
+          </div>
+          <div class='vote-row'>
+            <button class='vote-btn' data-id='${e.id}'>Проголосувати</button>
+            <div class='progress'><div class='progress__bar' style='width:${Math.min(94,Math.max(6,e.votes))}%'></div></div>
+            <div style='width:42px;text-align:right;font-weight:700'>${e.votes}</div>
+          </div>
+        </div>
+      `
+      gallery.appendChild(card)
+
+      // click on image opens modal
+      card.querySelector('.card__img').addEventListener('click', ()=>openModal(e.id))
+      card.querySelector('.vote-btn').addEventListener('click', ()=>vote(e.id))
+    })
+
+    // modal logic
+    const modal = document.getElementById('modal')
+    const modalImage = document.getElementById('modalImage')
+    const modalTitle = document.getElementById('modalTitle')
+    const modalDesc = document.getElementById('modalDesc')
+    const modalVotes = document.getElementById('modalVotes')
+    const modalProgress = document.getElementById('modalProgress')
+    const modalSticker = document.getElementById('modalSticker')
+
+    let current = 1
+    function openModal(id){
+      current = id
+      const e = entries.find(x=>x.id===id)
+      modalImage.style.backgroundImage = `url('${e.img}')`
+      modalTitle.textContent = e.title
+      modalDesc.textContent = e.desc
+      modalVotes.textContent = e.votes
+      modalProgress.style.width = Math.min(94,Math.max(6,e.votes)) + '%'
+      modalSticker.textContent = `Учасник #${e.id}`
+      modal.classList.add('open')
+      modal.setAttribute('aria-hidden','false')
+      document.body.style.overflow='hidden'
+      document.querySelector('.modal__card').animate([{transform:'translateY(12px) scale(.98)', opacity:0},{transform:'translateY(0) scale(1)', opacity:1}],{duration:380,easing:'cubic-bezier(.2,.9,.2,1)'})
+    }
+    function closeModal(){
+      modal.classList.remove('open')
+      modal.setAttribute('aria-hidden','true')
+      document.body.style.overflow=''
+    }
+
+    document.getElementById('close').addEventListener('click', closeModal)
+    document.getElementById('modal').addEventListener('click', (ev)=>{ if(ev.target===modal) closeModal() })
+
+    document.getElementById('next').addEventListener('click', ()=>change(1))
+    document.getElementById('prev').addEventListener('click', ()=>change(-1))
+
+    function change(dir){
+      const ids = entries.map(x=>x.id)
+      let idx = ids.indexOf(current)
+      idx = (idx + dir + ids.length) % ids.length
+      openModal(ids[idx])
+    }
+
+    // voting
+    function vote(id){
+      const e = entries.find(x=>x.id===id)
+      e.votes += 1
+      // update gallery UI
+      const card = [...document.querySelectorAll('.card')].find(c=>c.querySelector('.card__img').dataset.id==id)
+      if(card){
+        const bar = card.querySelector('.progress__bar')
+        if(bar) bar.style.width = Math.min(94,e.votes) + '%'
+        const count = card.querySelector('.vote-row > div:last-child')
+        if(count) count.textContent = e.votes
+      }
+      // update finalists strip
+      const fin = [...document.querySelectorAll('.finalist')].find(f=>f.querySelector('.finalist__img').dataset.id==id)
+      if(fin){
+        const num = fin.querySelector('div[style*="font-weight:700"]')
+        if(num) num.textContent = e.votes
+      }
+      // if modal open, update there too
+      if(modal.classList.contains('open')){
+        modalVotes.textContent = e.votes
+        modalProgress.style.width = Math.min(94,e.votes) + '%'
+      }
+      // small pulse effect
+      const btn = document.querySelector(`button[data-id='${id}']`)
+      if(btn){btn.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:380})}
+      // save to localStorage
+      try{ localStorage.setItem('contest_votes_ua', JSON.stringify(entries.map(x=>x.votes))) }catch(e){}
+    }
+
+    // load saved votes
+    try{
+      const saved = JSON.parse(localStorage.getItem('contest_votes_ua')||'')
+      if(Array.isArray(saved) && saved.length===entries.length) entries.forEach((x,i)=>x.votes = saved[i])
+    }catch(e){}
+
+    // keyboard navigation
+    window.addEventListener('keydown', (e)=>{
+      if(modal.classList.contains('open')){
+        if(e.key==='ArrowRight') change(1)
+        if(e.key==='ArrowLeft') change(-1)
+        if(e.key==='Escape') closeModal()
+      }
+    })
+
+    // parallax on scroll
+    const parallax = document.getElementById('parallax')
+    window.addEventListener('scroll', ()=>{
+      const sc = window.scrollY
+      parallax.style.transform = `translateY(${sc * -0.12}px) scale(1.08)`
+    })
+
+    // small entrance animation for cards
+    document.addEventListener('DOMContentLoaded', ()=>{
+      [...document.querySelectorAll('.card')].forEach((c,i)=>{
+        c.style.opacity=0
+        setTimeout(()=>{ c.animate([{opacity:0, transform:'translateY(18px)'},{opacity:1, transform:'translateY(0)'}],{duration:480,easing:'cubic-bezier(.2,.9,.2,1)'}); c.style.opacity=1 }, 80*i)
+      })
+    })
+
+    // setup modal vote and share buttons
+    document.getElementById('modalVote').addEventListener('click', ()=>vote(current))
+    document.getElementById('modalShare').addEventListener('click', ()=>{
+      const e = entries.find(x=>x.id===current)
+      if(navigator.share){navigator.share({title: e.title, text: e.desc, url: e.img}).catch(()=>{})}
+      else{prompt('Поділіться URL зображення', e.img)}
+    })
+  </script>
+
+    <script src="assets/scripts/translations.js"></script>
+    <script src="assets/scripts/language-switcher.js"></script>
+</body>
+</html>

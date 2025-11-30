@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="uk">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Сторінку не знайдено | Travellian - Подорожі по всьому світу</title>
+      <style>
+         :root {
+         --primary: #FF7A45;
+         --primary-dark: #FF7A45;
+         --secondary: #FF7A45;
+         --accent: #00C9A7;
+         --text-dark: #1A2B3C;
+         --text-light: #6B7C8D;
+         --background: #FFFFFF;
+         --background-light: #F8FAFC;
+         --border: #E2E8F0;
+         --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+         --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+         }
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         body {
+         font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, sans-serif;
+         line-height: 1.6;
+         color: var(--text-dark);
+         background-color: var(--background);
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         }
+         .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+         width: 100%;
+         }
+         header {
+         padding: 24px 0;
+         border-bottom: 1px solid var(--border);
+         background-color: var(--background);
+         }
+         .header-content {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         }
+         .logo {
+         font-size: 28px;
+         font-weight: 700;
+         color: var(--primary);
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         }
+         .logo-icon {
+         margin-right: 8px;
+         font-size: 32px;
+         }
+         .error-section {
+         flex: 1;
+         display: flex;
+         align-items: center;
+         padding: 80px 0;
+         }
+         .error-content {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 60px;
+         align-items: center;
+         }
+         .error-text {
+         max-width: 500px;
+         }
+         .error-code {
+         font-size: 140px;
+         font-weight: 800;
+         color: var(--primary);
+         line-height: 1;
+         margin-bottom: 20px;
+         }
+         .error-title {
+         font-size: 36px;
+         font-weight: 700;
+         margin-bottom: 16px;
+         color: var(--text-dark);
+         }
+         .error-description {
+         font-size: 18px;
+         color: var(--text-light);
+         margin-bottom: 40px;
+         line-height: 1.7;
+         }
+         .error-actions {
+         display: flex;
+         gap: 16px;
+         flex-wrap: wrap;
+         }
+         .btn {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         padding: 14px 28px;
+         border-radius: 12px;
+         font-weight: 600;
+         font-size: 16px;
+         text-decoration: none;
+         transition: all 0.3s ease;
+         cursor: pointer;
+         border: none;
+         }
+         .btn-primary {
+         background-color: var(--primary);
+         color: white;
+         }
+         .btn-primary:hover {
+         background-color: var(--primary-dark);
+         transform: translateY(-2px);
+         box-shadow: var(--shadow-hover);
+         }
+         .btn-secondary {
+         background-color: var(--background-light);
+         color: var(--text-dark);
+         border: 1px solid var(--border);
+         }
+         .btn-secondary:hover {
+         background-color: white;
+         transform: translateY(-2px);
+         box-shadow: var(--shadow-hover);
+         }
+         .btn-icon {
+         margin-right: 8px;
+         font-size: 18px;
+         }
+         .search-box {
+         margin-top: 40px;
+         position: relative;
+         max-width: 400px;
+         }
+         .search-input {
+         width: 100%;
+         padding: 16px 20px;
+         border: 1px solid var(--border);
+         border-radius: 12px;
+         font-size: 16px;
+         transition: all 0.3s ease;
+         background-color: var(--background-light);
+         }
+         .search-input:focus {
+         outline: none;
+         border-color: var(--primary);
+         box-shadow: 0 0 0 3px rgba(42, 109, 255, 0.1);
+         }
+         .search-btn {
+         position: absolute;
+         right: 8px;
+         top: 50%;
+         transform: translateY(-50%);
+         background: var(--primary);
+         color: white;
+         border: none;
+         border-radius: 8px;
+         width: 40px;
+         height: 40px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         }
+         .search-btn:hover {
+         background: var(--primary-dark);
+         }
+         /* Графічний елемент */
+         .error-visual {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .compass-animation {
+         width: 300px;
+         height: 300px;
+         position: relative;
+         }
+         .compass-outer {
+         width: 100%;
+         height: 100%;
+         border: 3px solid var(--primary);
+         border-radius: 50%;
+         position: relative;
+         animation: rotate 20s linear infinite;
+         }
+         .compass-inner {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 80%;
+         height: 80%;
+         background: var(--primary);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: white;
+         font-size: 24px;
+         font-weight: 700;
+         }
+         .compass-direction {
+         position: absolute;
+         font-weight: 700;
+         color: var(--primary);
+         }
+         .north {
+         top: 10px;
+         left: 50%;
+         transform: translateX(-50%);
+         }
+         .south {
+         bottom: 10px;
+         left: 50%;
+         transform: translateX(-50%);
+         }
+         .east {
+         right: 10px;
+         top: 50%;
+         transform: translateY(-50%);
+         }
+         .west {
+         left: 10px;
+         top: 50%;
+         transform: translateY(-50%);
+         }
+         @keyframes rotate {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         /* Популярні напрямки */
+         .popular-destinations {
+         padding: 60px 0;
+         background-color: var(--background-light);
+         }
+         .section-title {
+         text-align: center;
+         font-size: 32px;
+         font-weight: 700;
+         margin-bottom: 40px;
+         color: var(--text-dark);
+         }
+         .destinations-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+         gap: 24px;
+         }
+         .destination-card {
+         background: white;
+         border-radius: 16px;
+         overflow: hidden;
+         box-shadow: var(--shadow);
+         transition: all 0.3s ease;
+         }
+         .destination-card:hover {
+         transform: translateY(-5px);
+         box-shadow: var(--shadow-hover);
+         }
+         .destination-image {
+         height: 180px;
+         background-color: var(--primary);
+         background-size: cover;
+         background-position: center;
+         }
+         .destination-content {
+         padding: 20px;
+         }
+         .destination-name {
+         font-size: 18px;
+         font-weight: 600;
+         margin-bottom: 8px;
+         color: var(--text-dark);
+         }
+         .destination-description {
+         font-size: 14px;
+         color: var(--text-light);
+         margin-bottom: 16px;
+         }
+         .destination-link {
+         color: var(--primary);
+         font-weight: 600;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         transition: all 0.3s ease;
+         }
+         .destination-link:hover {
+         color: var(--primary-dark);
+         }
+         .destination-link-icon {
+         margin-left: 4px;
+         transition: transform 0.3s ease;
+         }
+         .destination-link:hover .destination-link-icon {
+         transform: translateX(4px);
+         }
+         /* Футер */
+         footer {
+         background-color: var(--text-dark);
+         color: white;
+         padding: 60px 0 30px;
+         }
+         .footer-content {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         gap: 40px;
+         margin-bottom: 40px;
+         }
+         .footer-column h3 {
+         font-size: 18px;
+         font-weight: 600;
+         margin-bottom: 20px;
+         color: white;
+         }
+         .footer-links {
+         list-style: none;
+         }
+         .footer-links li {
+         margin-bottom: 12px;
+         }
+         .footer-links a {
+         color: rgba(255, 255, 255, 0.7);
+         text-decoration: none;
+         transition: color 0.3s ease;
+         }
+         .footer-links a:hover {
+         color: white;
+         }
+         .footer-bottom {
+         border-top: 1px solid rgba(255, 255, 255, 0.1);
+         padding-top: 30px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 20px;
+         }
+         .copyright {
+         color: rgba(255, 255, 255, 0.7);
+         font-size: 14px;
+         }
+         .social-links {
+         display: flex;
+         gap: 16px;
+         }
+         .social-link {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         background-color: rgba(255, 255, 255, 0.1);
+         color: white;
+         text-decoration: none;
+         transition: all 0.3s ease;
+         }
+         .social-link:hover {
+         background-color: var(--primary);
+         transform: translateY(-2px);
+         }
+         /* Адаптивність */
+         @media (max-width: 992px) {
+         .error-content {
+         grid-template-columns: 1fr;
+         gap: 40px;
+         text-align: center;
+         }
+         .error-text {
+         max-width: 100%;
+         }
+         .error-actions {
+         justify-content: center;
+         }
+         .search-box {
+         margin-left: auto;
+         margin-right: auto;
+         }
+         }
+         @media (max-width: 768px) {
+         .error-code {
+         font-size: 100px;
+         }
+         .error-title {
+         font-size: 28px;
+         }
+         .compass-animation {
+         width: 200px;
+         height: 200px;
+         }
+         .footer-content {
+         grid-template-columns: 1fr 1fr;
+         }
+         }
+         @media (max-width: 576px) {
+         .error-actions {
+         flex-direction: column;
+         width: 100%;
+         }
+         .btn {
+         width: 100%;
+         }
+         .footer-content {
+         grid-template-columns: 1fr;
+         }
+         .footer-bottom {
+         flex-direction: column;
+         text-align: center;
+         }
+         }
+      </style>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   </head>
+   <body>
+      <main>
+         <section class="error-section">
+            <div class="container">
+               <div class="error-content">
+                  <div class="error-text">
+                     <h1 class="error-code">404</h1>
+                     <h2 class="error-title">Ой! Ми заблукали</h2>
+                     <p class="error-description">
+                        Схоже, що сторінка, яку ви шукаєте, відправилася у подорож без повернення. 
+                        Можливо, вона досліджує екзотичні країни або насолоджується відпочинком на тропічному острові.
+                     </p>
+                     <div class="error-actions">
+                        <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home btn-icon"></i>
+                        На головну
+                        </a>
+                     </div>
+                  </div>
+                  <div class="error-visual">
+                     <div class="compass-animation">
+                        <div class="compass-outer">
+                           <div class="compass-inner">404</div>
+                           <div class="compass-direction north">N</div>
+                           <div class="compass-direction south">S</div>
+                           <div class="compass-direction east">E</div>
+                           <div class="compass-direction west">W</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+   </body>
+</html>

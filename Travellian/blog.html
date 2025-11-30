@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title data-i18n="page_title">Travellian Blog</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="stylesheet" href="assets/styles/general.css">
+      <link rel="stylesheet" href="assets/styles/blog.css">
+      <style>
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <div class="header-content">
+               <div class="logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo" data-i18n="logo_alt">
+                  <a href="index.html" aria-label="Перейти на головну" data-i18n="go_home_aria"></a>
+               </div>
+               <nav>
+                  <ul>
+                     <li><a href="index.html" data-i18n="nav_home">Головна</a></li>
+                     <li><a href="book.html" data-i18n="nav_tours">Тури</a></li>
+                     <li><a href="#newsletter" data-i18n="blog_nav_news">Новини</a></li>
+                     <li>
+                        <div class="language-switcher">
+                           <button class="lang-btn active" data-lang="en">EN</button>
+                           <button class="lang-btn" data-lang="uk">UK</button> 
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </header>
+      <section class="blog-hero" aria-labelledby="blog-hero-title">
+         <h1 id="blog-hero-title" data-i18n="blog_hero_title">Travellian Blog</h1>
+         <p data-i18n="blog_hero_subtitle">Discover travel tips, destination guides, and inspiring stories from around the world</p>
+         <div class="search-box" role="search" aria-label="Site search">
+            <input id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles" data-i18n="blog_search_placeholder">
+            <button id="searchBtn" aria-label="Search" data-i18n="blog_search_button"><i class="fas fa-search"></i> Search</button>
+         </div>
+      </section>
+      <section class="breadcrumbs">
+         <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+               <a href="index.html" data-i18n="blog_breadcrumb_home">Головна</a>
+               <span class="separator">></span>
+               <a href="blog.html" data-i18n="blog_breadcrumb_blog">Блог</a>
+            </nav>
+         </div>
+      </section>
+      <div class="blog-container">
+         <main id="postsContainer" class="blog-posts" aria-live="polite">
+            <noscript>
+               <p data-i18n="blog_noscript_message">Please enable JavaScript to see blog posts.</p>
+            </noscript>
+         </main>
+         <aside class="sidebar" aria-label="Sidebar">
+            <div class="sidebar-widget" aria-labelledby="cat-title">
+               <h3 id="cat-title" data-i18n="blog_categories_title">Categories</h3>
+               <ul id="categoriesList" class="categories-list">
+               </ul>
+            </div>
+            <div class="sidebar-widget" aria-labelledby="recent-title">
+               <h3 id="recent-title" data-i18n="blog_recent_posts_title">Recent Posts</h3>
+               <ul id="recentPosts" class="recent-posts-list">
+               </ul>
+            </div>
+            <div class="sidebar-widget" aria-labelledby="tags-title">
+               <h3 id="tags-title" data-i18n="blog_tags_title">Tags</h3>
+               <div id="tagsList" class="tags">
+               </div>
+            </div>
+            <div id="newsletter" class="sidebar-widget newsletter" aria-labelledby="newsletter-title">
+               <h3 id="newsletter-title" data-i18n="blog_newsletter_title">Subscribe to Our Newsletter</h3>
+               <p data-i18n="blog_newsletter_description">Get the latest travel tips and destination guides straight to your inbox</p>
+               <form id="newsletterForm" class="newsletter-form" aria-label="Subscribe to newsletter">
+                  <input id="nl-name" type="text" placeholder="Your Name" aria-label="Your name" data-i18n="blog_newsletter_name_placeholder">
+                  <input id="nl-email" type="email" placeholder="Your Email" aria-label="Your email" data-i18n="blog_newsletter_email_placeholder">
+                  <button type="submit" data-i18n="blog_newsletter_submit">Subscribe</button>
+               </form>
+               <p id="newsletterStatus" class="sr-only" aria-live="polite"></p>
+            </div>
+         </aside>
+      </div>
+      <div class="pagination" id="paginationContainer" aria-label="Pagination"></div>
+      <footer>
+         <div class="container">
+            <div class="footer-content">
+               <div class="footer-logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo" class="logo-img" data-i18n="footer_logo_alt">
+                  <p class="copy" data-i18n="blog_footer_copyright">Copyright © Travellian 2020 All rights reserved</p>
+               </div>
+               <div class="footer-column">
+                  <h3 data-i18n="blog_footer_about_title">Про нас</h3>
+                  <p data-i18n="blog_footer_about_description">Ми - туристична агенція, яка спеціалізується на організації незабутніх подорожей по всьому світу. Наша мета - зробити ваш відпочинок комфортним та незабутнім.</p>
+                  <div class="social-links">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+               </div>
+               <div class="footer-column">
+                  <h3 data-i18n="blog_footer_links_title">Посилання</h3>
+                  <ul class="footer-links">
+                     <li><a href="index.html" data-i18n="blog_footer_links_home">Головна</a></li>
+                     <li><a href="book.html" data-i18n="blog_footer_links_tours">Тури</a></li>
+                     <li><a href="#newsletter" data-i18n="blog_footer_links_news">Новини</a></li>
+                  </ul>
+               </div>
+               <div id="kontakt" class="footer-column">
+                  <h3 data-i18n="blog_footer_contact_title">Контакти</h3>
+                  <ul class="footer-links">
+                     <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="blog_footer_contact_address">вул. Хрещатик, 22, Київ</span></li>
+                     <li><i class="fas fa-phone"></i> <span data-i18n="blog_footer_contact_phone">+38 (044) 123-45-67</span></li>
+                     <li><i class="fas fa-envelope"></i> <span data-i18n="blog_footer_contact_email">info@worldtravel.com</span></li>
+                     <li><i class="far fa-clock"></i> <span data-i18n="blog_footer_contact_hours">Пн-Пт: 9:00-20:00</span></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="copyright">
+               <p data-i18n="blog_copyright_text">&copy; 2025 WorldTravel. Всі права захищені.</p>
+            </div>
+         </div>
+      </footer>
+      <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" data-i18n="scroll_top_aria">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+         </svg>
+      </button>
+      <script src="assets/scripts/translations.js"></script>
+      <script src="assets/scripts/language-switcher.js"></script>
+      <script src="assets/scripts/scripts.js" defer></script>
+      <script src="assets/scripts/blog.js" defer></script>
+   </body>
+</html>

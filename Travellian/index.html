@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Travellian</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="assets/styles/style.css">
+   </head>
+   <body>
+      <div id="splash-screen">
+         <video id="splash-video" autoplay muted playsinline>
+            <source src="assets/videos/splash-video.mp4" type="video/mp4">
+         </video>
+         <div class="splash-content">
+            <h1 data-i18n="splash_welcome">Welcome to Travellian</h1>
+            <p data-i18n="splash_start">Start your unforgettable journey</p>
+            <button id="skip-splash" data-i18n="splash_skip">Skip</button>
+         </div>
+      </div>
+      <section class="header-section">
+         <header id="header" class="header d-flex items-center">
+            <div class="content-wrap d-flex w-full justify-between">
+               <div class="logo">
+                  <img src="assets/images/Logo.png" alt="Travellian Logo">
+                  <a href="index.html"></a>
+               </div>
+               <div id="burgerMenu" class="burger-menu">
+                  <i id="openIcon" class="fa-solid fa-bars"></i>
+                  <i id="closeIcon" class="fa-solid fa-xmark d-none"></i>
+               </div>
+               <nav id="headerNav" class="header-nav justify-between">
+                  <ul class="main-menu items-center">
+                     <li>
+                        <a href="#" data-i18n="nav_home">Home</a>
+                     </li>
+                     <li>
+                        <a href="#popular" data-i18n="nav_explore">Explore</a>
+                     </li>
+                     <li>
+                        <a href="#special" data-i18n="nav_travel">Travel</a>
+                     </li>
+                     <li>
+                        <a href="#blog" data-i18n="nav_blog">Blog</a>
+                     </li>
+                     <li>
+                        <a href="#planners" data-i18n="nav_pricing">Pricing</a>
+                     </li>
+                     <li>
+                        <div class="language-switcher">
+                           <button class="lang-btn active" data-lang="en">EN</button>
+                           <button class="lang-btn" data-lang="uk">UK</button> 
+                        </div>
+                     </li>
+                  </ul>
+                  <ul class="main-registration">
+                     <li>
+                        <a href="#" class="main-registration-login" onclick="openModal('login')" data-i18n="nav_login">Login</a>
+                     </li>
+                     <li>
+                        <a href="#" class="uppercase btn btn__header btn__header--main-color" onclick="openModal('register')">Sign up</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </header>
+         <div class="hero-section">
+            <div id="target" class="hero-content content-wrap">
+               <h1 data-i18n="hero_title">Start your unforgettable journey with us.</h1>
+               <p data-i18n="hero_subtitle">The best travel for your journey begins now</p>
+            </div>
+            <div class="booking-form">
+               <label>
+               <span data-i18n="booking_destination">DESTINATION</span>
+               <input type="text" placeholder="Dubai">
+               </label>
+               <label>
+                  <span data-i18n="booking_person">PERSON</span>
+                  <select>
+                     <option>1</option>
+                     <option selected>2</option>
+                     <option>3</option>
+                     <option>4</option>
+                  </select>
+               </label>
+               <label>
+               <span data-i18n="booking_checkin">CHECK IN</span>
+               <input type="date" value="2020-09-17">
+               </label>
+               <label>
+               <span data-i18n="booking_checkout">CHECK OUT</span>
+               <input type="date" value="2020-10-17">
+               </label>
+               <a href="book.html" class="btn-book" data-i18n="booking_booknow">Book Now →</a>
+            </div>
+         </div>
+      </section>
+      <section id="popular" class="content-wrap popular-destinations pd-section">
+         <h2 class="title" data-i18n="popular_title">Popular Destinations</h2>
+         <div class="underline"></div>
+         <p class="pd-subtitle" data-i18n="popular_subtitle">
+            Most popular destinations around the world, from historical places
+            to natural wonders.
+         </p>
+         <div class="pd-gallery">
+            <div class="pd-wrapper swiper" id="popularDestinationsSwiper">
+               <div class="swiper-wrapper">
+               </div>
+            </div>
+            <div class="controls">
+               <button class="gallery-btn gallery-prev" aria-label="Previous slide">&#60;</button>
+               <button class="gallery-btn gallery-next" aria-label="Next slide">&#62;</button>
+            </div>
+         </div>
+      </section>
+      <section id="special" class="content-wrap special_offer so-section">
+         <h2 class="title" data-i18n="special_title">Special Offer</h2>
+         <div class="underline"></div>
+         <p class="so-subtitle" data-i18n="special_subtitle">
+            Check out our special offer and discounts.
+         </p>
+         <div class="so-gallery" aria-roledescription="carousel">
+            <div class="cards-wrapper" id="cardsWrapper">
+            </div>
+            <div class="controls">
+               <button class="gallery-btn gallery-prev">&#60;</button>
+               <button class="gallery-btn gallery-next">&#62;</button>
+            </div>
+         </div>
+      </section>
+      <section id="blog" class="content-wrap ob-section">
+         <h2 class="title" data-i18n="blog_title">Our Blog</h2>
+         <div class="underline"></div>
+         <p class="pd-subtitle" data-i18n="blog_subtitle">
+            An insight the incredible experience in the world.
+         </p>
+         <div class="blog-wrapper">
+            <div class="blog-text">
+               <h2 class="title" data-i18n="blog_post_title">Beautiful Italy Let's travel</h2>
+               <p class="blog-content" data-i18n="blog_content">But I must explain to you how all this mistaken idea of denouncing 
+                  pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, 
+                  the master- builder of human happiness. No one rejects, dislike, or avoids plasure itself, because it is pleasure, but because those who do not know how to pursue 
+                  pleasure rationally encounter consequences that are extremly painful. Nor again is there anyone who loves or pursues.
+               </p>
+               <a href="blog.html" class="blog-link" data-i18n="blog_readmore">Read More →</a>
+            </div>
+            <img class="blog-image" src="assets/images/blog.jpg" alt="Our Blog">
+         </div>
+      </section>
+      <section id="planners" class="content-wrap tp-section">
+         <div class="tp-content">
+            <h2 class="title" data-i18n="planners_title">Trip Planners</h2>
+            <div class="underline"></div>
+            <p class="tp-subtitle" data-i18n="planners_subtitle">
+               20 years from now you will be more disappointed by the things that you didn't do. Stop regretting and start travelling, start throwing off the bowlines.
+            </p>
+         </div>
+         <div class="tp-controls">
+            <button class="tp-gallery-btn tp-gallery-prev">&#60;</button>
+            <button class="tp-gallery-btn tp-gallery-next">&#62;</button>
+         </div>
+         <div class="tp-gallery" aria-roledescription="carousel">
+            <div class="tp-wrapper" id="tp-Wrapper">
+               <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="card__image" src="assets/images/trip-1.jpg" alt="Lisbon balcony">
+                  <div class="tp-card__body">
+                     <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€99/<span data-i18n="days">Day</span></strong></div>
+                     <h3 class="card__title">Rome City Tour</h3>
+                     <div class="stars" aria-hidden="true">
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                     </div>
+                     <p class="card__desc">7 <span data-i18n="planners_days">Days tour</span></p>
+                  </div>
+               </article>
+               <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="card__image" src="assets/images/trip-2.jpg" alt="Lisbon balcony">
+                  <div class="tp-card__body">
+                     <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€95/<span data-i18n="days">Day</span></strong></div>
+                     <h3 class="card__title">Paris City Tour</h3>
+                     <div class="stars" aria-hidden="true">
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                     </div>
+                     <p class="card__desc">7 <span data-i18n="planners_days">Days tour</span></p>
+                  </div>
+               </article>
+               <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="card__image" src="assets/images/trip-3.jpg" alt="Lisbon balcony">
+                  <div class="tp-card__body">
+                     <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€89/<span data-i18n="days">Day</span></strong></div>
+                     <h3 class="card__title">Barcelona City Tour</h3>
+                     <div class="stars" aria-hidden="true">
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                     </div>
+                     <p class="card__desc">7 <span data-i18n="planners_days">Days tour</span></p>
+                  </div>
+               </article>
+               <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="card__image" src="assets/images/trip-4.jpg" alt="Lisbon balcony">
+                  <div class="tp-card__body">
+                     <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€89/<span data-i18n="days">Day</span></strong></div>
+                     <h3 class="card__title">Budapest City Tour</h3>
+                     <div class="stars" aria-hidden="true">
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12 .587l3.668 7.431L23.4 9.75l-5.7 5.56 1.344 7.86L12 18.896l-7.044 4.274L6.3 15.31 0.6 9.75l7.732-1.732z"/>
+                        </svg>
+                     </div>
+                     <p class="card__desc">7 <span data-i18n="planners_days">Days tour</span></p>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </section>
+      <section class="content-wrap destinations-gallery pd-section">
+         <h2 class="title" data-i18n="gallery_title">Destination Gallery</h2>
+         <div class="underline"></div>
+         <p class="pd-subtitle" data-i18n="gallery_subtitle">
+            Our photo gallery on trip
+         </p>
+         <div class="pd-gallery">
+            <div class="dg-wrapper">
+               <article class="pd-item">
+                  <img class="pd-img" src="assets/images/gallery-1.jpg" alt="Gallery">
+               </article>
+               <article class="pd-item">
+                  <img class="pd-img" src="assets/images/gallery-2.jpg" alt="Gallery">
+               </article>
+               <article class="pd-item">
+                  <img class="pd-img" src="assets/images/gallery-3.jpg" alt="Gallery">
+               </article>
+               <article class="pd-item">
+                  <img class="pd-img" src="assets/images/gallery-4.jpg" alt="Gallery">
+               </article>
+            </div>
+         </div>
+         <div class="gallery-btn-wrap">
+            <a href="gallery.html" class="gallery-page-btn">Переглянути галерею</a>
+          </div>
+      </section>
+      <section class="content-wrap te-section">
+         <h2 class="title" data-i18n="experiences_title">Traveler's Experiences</h2>
+         <div class="underline"></div>
+         <p class="so-subtitle" data-i18n="experiences_subtitle">Here some awesome feedback from our travelers</p>
+         <div class="user-gallery" aria-roledescription="carousel">
+            <div class="user-cards-wrapper" id="cardsWrapper">
+               <article class="card-user" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="user_image" src="assets/images/user-1.png" alt="Lisbon balcony">
+                  <div class="card__body">
+                     <p class="coment">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.</p>
+                     <div class="stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                     </div>
+                     <h3 class="card__title">John Doe</h3>
+                     <p class="coment">Accountant</p>
+                  </div>
+               </article>
+               <article class="card-user" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="user_image" src="assets/images/user-2.png" alt="Lisbon balcony">
+                  <div class="card__body">
+                     <p class="coment">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.</p>
+                     <div class="stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                     </div>
+                     <h3 class="card__title">John Doe</h3>
+                     <p class="coment">Accountant</p>
+                  </div>
+               </article>
+               <article class="card-user" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="user_image" src="assets/images/user-3.png" alt="Lisbon balcony">
+                  <div class="card__body">
+                     <p class="comment">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.</p>
+                     <div class="stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                     </div>
+                     <h3 class="card__title">John Doe</h3>
+                     <p class="comment">Accountant</p>
+                  </div>
+               </article>
+               <article class="card-user" aria-roledescription="slide" aria-label="Lisbon, Portugal">
+                  <img class="user_image" src="assets/images/user-3.png" alt="Lisbon balcony">
+                  <div class="card__body">
+                     <p class="coment">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.</p>
+                     <div class="stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                     </div>
+                     <h3 class="card__title">John Doe</h3>
+                     <p class="coment">Accountant</p>
+                  </div>
+               </article>
+            </div>
+            <div class="controls">
+               <button class="gallery-btn gallery-prev">&#60;</button>            
+               <button class="gallery-btn gallery-next">&#62;</button>
+            </div>
+         </div>
+      </section>
+      <section id="newsletter" class="newsletter-section" aria-labelledby="nl-title">
+         <div class="newsletter-card">
+            <h2 id="nl-title" class="newsletter-title" data-i18n="newsletter_title">Our Newsletter</h2>
+            <form class="newsletter-form" action="#" method="post" novalidate>
+               <label for="nl-email" class="newsletter-label" data-i18n="newsletter_email">Email</label>
+               <div class="input-row">
+                  <input id="nl-email" name="email" type="email" placeholder="Enter your email" data-i18n-placeholder="newsletter_placeholder" required>
+                  <button type="submit" class="btn-subscribe" data-i18n="newsletter_subscribe">Subscribe</button>
+               </div>
+            </form>
+         </div>
+      </section>
+      <footer>
+         <div class="footer-container">
+            <div class="footer-logo">
+               <img src="assets/images/Logo.png" alt="Travellian Logo" class="logo-img">
+               <p class="copy" data-i18n="footer_copyright">Copyright © Travellian 2020 All rights reserved</p>
+            </div>
+            <div class="footer-col">
+               <h3 data-i18n="footer_menu">Menu</h3>
+               <ul>
+                  <li><a href="#" data-i18n="nav_home">Home</a></li>
+                  <li><a href="#popular" data-i18n="nav_explore">Explore</a></li>
+                  <li><a href="#special" data-i18n="nav_travel">Travel</a></li>
+                  <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+                  <li><a href="#planners" data-i18n="nav_pricing">Pricing</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h3 data-i18n="footer_info">Information</h3>
+               <ul>
+                  <li><a href="#" data-i18n="footer_destinations">Destinations</a></li>
+                  <li><a href="#" data-i18n="footer_support">Supports</a></li>
+                  <li><a href="#" data-i18n="footer_terms">Terms & Conditions</a></li>
+                  <li><a href="#" data-i18n="footer_privacy">Privacy</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h3 data-i18n="footer_contact">Contact Info</h3>
+               <p>+123 456 789</p>
+               <p>info@travellian.com</p>
+               <p>1245, New Yourk, USA</p>
+            </div>
+            <div class="footer-col socials">
+               <h3 data-i18n="footer_follow">Follow us on</h3>
+               <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <button class="scroll-top-btn" id="scrollTopBtn">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+         </svg>
+      </button>
+      <script src="assets/scripts/translations.js"></script>
+      <script src="assets/scripts/language-switcher.js"></script>
+      <script src="assets/scripts/scripts.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   </body>
+   <div class="modal" data-modal="login" aria-hidden="true">
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title" tabindex="-1">
+         <header class="modal__header">
+            <h2 id="login-title" data-i18n="modal_welcome_back">Welcome back</h2>
+            <button class="modal__close" aria-label="Close login window" data-modal-close>&times;</button>
+         </header>
+         <section class="modal__body">
+            <form id="login-form" class="form">
+               <label class="form__label">
+               Email
+               <input type="email" name="email" required class="form__input" />
+               </label>
+               <label class="form__label">
+               Password
+               <input type="password" name="password" required minlength="6" class="form__input" />
+               </label>
+               <div class="form__actions">
+                  <button type="submit" class="btn btn--primary" data-i18n="modal_login">Log in</button>
+                  <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
+               </div>
+                  <p class="modal__meta">
+                    <span data-i18n="modal_no_account">Don't have an account?</span>
+                    &nbsp;
+                    <a href="#" class="modal__link" onclick="openModal('register'); return false;" data-i18n="modal_signup">Sign up</a>
+                  </p>              
+                </form>
+         </section>
+      </div>
+   </div>
+   <div class="modal" data-modal="register" aria-hidden="true">
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__dialog modal__dialog--small" role="dialog" aria-modal="true" aria-labelledby="register-title" tabindex="-1">
+         <header class="modal__header">
+            <h2 id="register-title" data-i18n="modal_create_account">Create account</h2>
+            <button class="modal__close" aria-label="Close register window" data-modal-close>&times;</button>
+         </header>
+         <section class="modal__body">
+            <form id="register-form" class="form">
+               <label class="form__label">
+               Full name
+               <input type="text" name="name" required class="form__input" />
+               </label>
+               <label class="form__label">
+               Email
+               <input type="email" name="email" required class="form__input" />
+               </label>
+               <label class="form__label">
+               Password
+               <input type="password" name="password" required minlength="6" class="form__input" />
+               </label>
+               <div class="form__actions">
+                  <button type="submit" class="btn btn--primary" data-i18n="modal_signup">Sign up</button>
+                  <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
+               </div>
+            </form>
+         </section>
+      </div>
+   </div>
+</html>
