@@ -2,31 +2,32 @@
   {
     "title": "Monument of Berlin",
     "location": "Berlin, Germany",
-    "image": "assets/images/dest-1.jpg",
+    "image": "assets/images/dest-1.webp",
     "alt": "Monument of Berlin"
   },
   {
     "title": "Millenium Bridge",
     "location": "London, United Kingdom",
-    "image": "assets/images/dest-2.jpg",
+    "image": "assets/images/dest-2.webp",
     "alt": "Millenium Bridge"
   },
   {
     "title": "Rialto Bridge",
     "location": "Venice, Italy",
-    "image": "assets/images/dest-3.jpg",
+    "image": "assets/images/dest-3.webp",
     "alt": "Rialto Bridge"
   },
   {
     "title": "Buddha Stupa",
     "location": "Bodtah, Nepal",
-    "image": "assets/images/dest-4.jpg",
+    "image": "assets/images/dest-4.webp",
     "alt": "Buddha Stupa"
   },
   {
     "title": "Taj Mahal",
     "location": "Agra, India",
-    "image": "assets/images/dest-5.jpg",
+    "image": "assets/images/dest-5.webp",
     "alt": "Taj Mahal"
   }
 ]
+
