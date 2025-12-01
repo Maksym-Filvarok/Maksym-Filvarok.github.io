@@ -18,7 +18,7 @@ color: var(--dark);
 line-height: 1.6;
 }
 .blog-hero {
-background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("C:/Users/Maxymilian/Downloads/practiceWeb_Travellian/assets/images/hero.png");
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://maksym-filvarok.github.io/Travellian/assets/images/hero.webp");
 background-size: cover;
 background-position: center;
 color: white;
@@ -389,3 +389,4 @@ padding: 12px;
 }
 
 }
+
