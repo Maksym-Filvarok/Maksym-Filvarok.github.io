@@ -297,7 +297,7 @@ body.splash-hidden #splash-screen {
 	color: #657089;
 }
 .modal__meta a {
-	color: var(#2b414f);
+	color: #2b414f;
 	text-decoration: none;
 }
 .modal__link {
@@ -570,7 +570,6 @@ ul {
 	background: #fff;
 	border-radius: 16px;
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-	margin-top: 0 auto;
 	opacity: 1;
 	transform: rotate(0deg);
 	position: absolute;
@@ -1849,3 +1848,4 @@ footer {
 	}
 
 }
+
