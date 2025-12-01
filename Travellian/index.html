@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Travellian</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
       <link rel="stylesheet" href="assets/styles/style.css">
    </head>
    <body>
@@ -145,7 +145,7 @@
                </p>
                <a href="blog.html" class="blog-link" data-i18n="blog_readmore">Read More →</a>
             </div>
-            <img class="blog-image" src="assets/images/blog.webp" alt="Our Blog">
+            <img class="blog-image" src="assets/images/blog.jpg" alt="Our Blog">
          </div>
       </section>
       <section id="planners" class="content-wrap tp-section">
@@ -163,7 +163,7 @@
          <div class="tp-gallery" aria-roledescription="carousel">
             <div class="tp-wrapper" id="tp-Wrapper">
                <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
-                  <img class="card__image" src="assets/images/trip-1.webp" alt="Lisbon balcony">
+                  <img class="card__image" src="assets/images/trip-1.jpg" alt="Lisbon balcony">
                   <div class="tp-card__body">
                      <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€99/<span data-i18n="days">Day</span></strong></div>
                      <h3 class="card__title">Rome City Tour</h3>
@@ -188,7 +188,7 @@
                   </div>
                </article>
                <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
-                  <img class="card__image" src="assets/images/trip-2.webp" alt="Lisbon balcony">
+                  <img class="card__image" src="assets/images/trip-2.jpg" alt="Lisbon balcony">
                   <div class="tp-card__body">
                      <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€95/<span data-i18n="days">Day</span></strong></div>
                      <h3 class="card__title">Paris City Tour</h3>
@@ -213,7 +213,7 @@
                   </div>
                </article>
                <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
-                  <img class="card__image" src="assets/images/trip-3.webp" alt="Lisbon balcony">
+                  <img class="card__image" src="assets/images/trip-3.jpg" alt="Lisbon balcony">
                   <div class="tp-card__body">
                      <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€89/<span data-i18n="days">Day</span></strong></div>
                      <h3 class="card__title">Barcelona City Tour</h3>
@@ -238,7 +238,7 @@
                   </div>
                </article>
                <article class="tp-card" aria-roledescription="slide" aria-label="Lisbon, Portugal">
-                  <img class="card__image" src="assets/images/trip-4.webp" alt="Lisbon balcony">
+                  <img class="card__image" src="assets/images/trip-4.jpg" alt="Lisbon balcony">
                   <div class="tp-card__body">
                      <div class="tp-card__price"><span data-i18n="planners_guided">Guided Tour</span>: <strong>€89/<span data-i18n="days">Day</span></strong></div>
                      <h3 class="card__title">Budapest City Tour</h3>
@@ -274,16 +274,20 @@
          <div class="pd-gallery">
             <div class="dg-wrapper">
                <article class="pd-item">
-                  <img class="pd-img" src="assets/images/gallery-1.webp" alt="Gallery">
+                  <h3 class="sr-only">Destination Image 1</h3>
+                  <img class="pd-img" src="assets/images/gallery-1.jpg" alt="Gallery">
                </article>
                <article class="pd-item">
-                  <img class="pd-img" src="assets/images/gallery-2.webp" alt="Gallery">
+                  <h3 class="sr-only">Destination Image 2</h3>
+                  <img class="pd-img" src="assets/images/gallery-2.jpg" alt="Gallery">
                </article>
                <article class="pd-item">
-                  <img class="pd-img" src="assets/images/gallery-3.webp" alt="Gallery">
+                  <h3 class="sr-only">Destination Image 3</h3>
+                  <img class="pd-img" src="assets/images/gallery-3.jpg" alt="Gallery">
                </article>
                <article class="pd-item">
-                  <img class="pd-img" src="assets/images/gallery-4.webp" alt="Gallery">
+                  <h3 class="sr-only">Destination Image 4</h3>
+                  <img class="pd-img" src="assets/images/gallery-4.jpg" alt="Gallery">
                </article>
             </div>
          </div>
@@ -296,7 +300,7 @@
          <div class="underline"></div>
          <p class="so-subtitle" data-i18n="experiences_subtitle">Here some awesome feedback from our travelers</p>
          <div class="user-gallery" aria-roledescription="carousel">
-            <div class="user-cards-wrapper" id="cardsWrapper">
+            <div class="user-cards-wrapper" id="userCardsWrapper">
                <article class="card-user" aria-roledescription="slide" aria-label="Lisbon, Portugal">
                   <img class="user_image" src="assets/images/user-1.webp" alt="Lisbon balcony">
                   <div class="card__body">
@@ -418,6 +422,68 @@
             </div>
          </div>
       </footer>
+
+      <!-- Modal dialogs moved inside body -->
+      <div class="modal" data-modal="login" aria-hidden="true">
+         <div class="modal__overlay" data-modal-close></div>
+         <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title" tabindex="-1">
+            <header class="modal__header">
+               <h2 id="login-title" data-i18n="modal_welcome_back">Welcome back</h2>
+               <button class="modal__close" aria-label="Close login window" data-modal-close>&times;</button>
+            </header>
+            <div class="modal__body">
+               <form id="login-form" class="form">
+                  <label class="form__label">
+                  Email
+                  <input type="email" name="email" required class="form__input">
+                  </label>
+                  <label class="form__label">
+                  Password
+                  <input type="password" name="password" required minlength="6" class="form__input">
+                  </label>
+                  <div class="form__actions">
+                     <button type="submit" class="btn btn--primary" data-i18n="modal_login">Log in</button>
+                     <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
+                  </div>
+                     <p class="modal__meta">
+                       <span data-i18n="modal_no_account">Don't have an account?</span>
+                       &nbsp;
+                       <a href="#" class="modal__link" onclick="openModal('register'); return false;" data-i18n="modal_signup">Sign up</a>
+                     </p>              
+                   </form>
+            </div>
+         </div>
+      </div>
+      <div class="modal" data-modal="register" aria-hidden="true">
+         <div class="modal__overlay" data-modal-close></div>
+         <div class="modal__dialog modal__dialog--small" role="dialog" aria-modal="true" aria-labelledby="register-title" tabindex="-1">
+            <header class="modal__header">
+               <h2 id="register-title" data-i18n="modal_create_account">Create account</h2>
+               <button class="modal__close" aria-label="Close register window" data-modal-close>&times;</button>
+            </header>
+            <div class="modal__body">
+               <form id="register-form" class="form">
+                  <label class="form__label">
+                  Full name
+                  <input type="text" name="name" required class="form__input">
+                  </label>
+                  <label class="form__label">
+                  Email
+                  <input type="email" name="email" required class="form__input">
+                  </label>
+                  <label class="form__label">
+                  Password
+                  <input type="password" name="password" required minlength="6" class="form__input">
+                  </label>
+                  <div class="form__actions">
+                     <button type="submit" class="btn btn--primary" data-i18n="modal_signup">Sign up</button>
+                     <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
       <button class="scroll-top-btn" id="scrollTopBtn">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
@@ -428,64 +494,4 @@
       <script src="assets/scripts/scripts.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
    </body>
-   <div class="modal" data-modal="login" aria-hidden="true">
-      <div class="modal__overlay" data-modal-close></div>
-      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title" tabindex="-1">
-         <header class="modal__header">
-            <h2 id="login-title" data-i18n="modal_welcome_back">Welcome back</h2>
-            <button class="modal__close" aria-label="Close login window" data-modal-close>&times;</button>
-         </header>
-         <section class="modal__body">
-            <form id="login-form" class="form">
-               <label class="form__label">
-               Email
-               <input type="email" name="email" required class="form__input" />
-               </label>
-               <label class="form__label">
-               Password
-               <input type="password" name="password" required minlength="6" class="form__input" />
-               </label>
-               <div class="form__actions">
-                  <button type="submit" class="btn btn--primary" data-i18n="modal_login">Log in</button>
-                  <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
-               </div>
-                  <p class="modal__meta">
-                    <span data-i18n="modal_no_account">Don't have an account?</span>
-                    &nbsp;
-                    <a href="#" class="modal__link" onclick="openModal('register'); return false;" data-i18n="modal_signup">Sign up</a>
-                  </p>              
-                </form>
-         </section>
-      </div>
-   </div>
-   <div class="modal" data-modal="register" aria-hidden="true">
-      <div class="modal__overlay" data-modal-close></div>
-      <div class="modal__dialog modal__dialog--small" role="dialog" aria-modal="true" aria-labelledby="register-title" tabindex="-1">
-         <header class="modal__header">
-            <h2 id="register-title" data-i18n="modal_create_account">Create account</h2>
-            <button class="modal__close" aria-label="Close register window" data-modal-close>&times;</button>
-         </header>
-         <section class="modal__body">
-            <form id="register-form" class="form">
-               <label class="form__label">
-               Full name
-               <input type="text" name="name" required class="form__input" />
-               </label>
-               <label class="form__label">
-               Email
-               <input type="email" name="email" required class="form__input" />
-               </label>
-               <label class="form__label">
-               Password
-               <input type="password" name="password" required minlength="6" class="form__input" />
-               </label>
-               <div class="form__actions">
-                  <button type="submit" class="btn btn--primary" data-i18n="modal_signup">Sign up</button>
-                  <button type="button" class="btn btn--ghost" data-modal-close data-i18n="modal_cancel">Cancel</button>
-               </div>
-            </form>
-         </section>
-      </div>
-   </div>
-
 </html>
