@@ -170,7 +170,6 @@ font-size: 1.5rem;
 margin-bottom: 20px;
 padding-bottom: 10px;
 border-bottom: 2px solid var(--accent);
-color: var(--secondary);
 }
 .categories-list,
 .recent-posts-list {
@@ -388,4 +387,5 @@ margin-bottom: 10px;
 border-radius: 30px;
 padding: 12px;
 }
+
 }
