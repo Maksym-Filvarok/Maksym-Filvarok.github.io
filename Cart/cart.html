@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик - DRONE SHOP</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-drone"></i>
+      <span>DRONE SHOP</span>
+    </div>
+    <div class="cart-icon-container">
+      <a href="index.html" class="cart-link">
+        <i class="fas fa-home"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="cart-container">
+    <h1>Ваше замовлення</h1>
+    
+    <div class="cart-table-container">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Назва товару</th>
+            <th>Ціна за од.</th>
+            <th>Кількість</th>
+            <th>Сума</th>
+            <th>Дії</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Товары будут добавляться динамически -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="total-label">Разом до оплати</td>
+            <td colspan="2" class="total-price" id="cart-total">0.00 грн</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="cart-actions">
+      <a href="index.html" class="btn secondary">Повернутись до покупок</a>
+      <button id="checkout-btn" class="btn">Оплатити</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>

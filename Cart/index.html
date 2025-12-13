@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квадрокоптери та аксесуари - Магазин</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="main-header">
+    <div class="logo">
+      <i class="fas fa-drone"></i>
+      <span>DRONE SHOP</span>
+    </div>
+    <div class="cart-icon-container">
+      <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <h1>обов'язково додайте своє замовлення</h1>
+
+  <div class="catalog-container">
+    <!-- Стрілка вліво -->
+    <div class="swipe swipe_left">&lt;</div>
+
+    <!-- Блок 1 -->
+    <div class="product" data-id="1" data-name="Квадрокоптер DJI Air 3" data-price="32000">
+      <div class="sticker new">новинка</div>
+      <div class="category"><a href="https://wazza.com.ua/ru/kvadrokoptery/">квадрокоптери</a></div>
+      <a href="#"><img src="Квадрокоптер DJI Mini 3 Pro RC.jpg" alt="Квадрокоптер 1" class="product-img"></a>
+      <a href="#" class="product-name">Квадрокоптер DJI Air 3 із пультом RC-N2.</a>
+      <div class="price">32 000 грн</div>
+      <button class="btn">у корзину</button>
+    </div>
+
+    <!-- Блок 2 -->
+    <div class="product" data-id="2" data-name="Комплект для збирання FPV" data-price="18600">
+      <div class="category"><a href="https://wazza.com.ua/ru/aksessuary-dlya-fpv-kvadrokopterov/">Комплектуючі</a></div>
+      <a href="#"><img src="набір.jpg" alt="Набір аксесуарів" class="product-img"></a>
+      <a href="#" class="product-name">Комплект для збирання FPV квадрокоптера</a>
+      <div class="price"><span class="old-price">27 899 грн</span> <span class="new-price">18 600 грн</span></div>
+      <button class="btn">у корзину</button>
+    </div>
+
+    <!-- Блок 3 -->
+    <div class="product" data-id="3" data-name="Акумуляторне складання 3S3P" data-price="2150">
+      <div class="sticker hit">хіт продажів</div>
+      <div class="category"><a href="https://wazza.com.ua/ru/akkumulyatory-dlya-fpv/">акумулятори</a></div>
+      <a href="#"><img src="аккум.jpg" alt="Акумулятор" class="product-img"></a>
+      <a href="#" class="product-name">Акумуляторне складання 3S3P Energy Life 11400 мАг</a>
+      <div class="price">2 150 грн</div>
+      <button class="btn">у корзину</button>
+    </div>
+
+    <!-- Блок 4 -->
+    <div class="product" data-id="4" data-name="Підвіс із камерою DJI Mavic 2 Pro" data-price="21065">
+      <div class="sticker hit">хіт продажів</div>
+      <div class="category"><a href="https://wazza.com.ua/ru/zapchasti-dlya-kvadrokopterov/">запчастини</a></div>
+      <a href="#"><img src="камера.jpg" alt="Запчастини" class="product-img"></a>
+      <a href="#" class="product-name">Підвіс із камерою DJI Mavic 2 Pro у зборі</a>
+      <div class="price">21 065 грн</div>
+      <button class="btn">у корзину</button>
+    </div>
+
+    <!-- Стрілка вправо -->
+    <div class="swipe swipe_right">&gt;</div>
+  </div>
+
+  <!-- Модальное окно для указания количества (новое с кнопками + и -) -->
+  <div id="quantityModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Вкажіть кількість:</h3>
+      <div class="quantity-selector">
+        <button class="quantity-btn minus-btn" id="quantityMinus">-</button>
+        <span id="quantityDisplay" class="quantity-display">1</span>
+        <button class="quantity-btn plus-btn" id="quantityPlus">+</button>
+      </div>
+      <button id="addToCartModalBtn" class="modal-btn">Додати до корзини</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно подтверждения добавления -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h3>Товар додано</h3>
+      <div class="modal-buttons">
+        <a href="cart.html" class="modal-btn">Перейти у корзину</a>
+        <button id="continueShoppingBtn" class="modal-btn secondary">Повернутись до покупок</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно пустой корзины -->
+  <div id="emptyCartModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Корзина пуста</h3>
+      <p>Додайте товари у корзину для оформлення замовлення.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
