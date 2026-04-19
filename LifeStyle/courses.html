@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lifestyle Fitnessclub | Kurse & Termine 2026</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+    <div class="lightning-bg"></div>
+      <header class="main-header">
+        <div class="container header-container">
+          <a href="index.html" class="hero__logo">
+            <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+          </a>
+
+          <nav class="main-nav" aria-label="Головна навігація">
+            <div class="main-nav__menu" id="main-menu">
+              <a href="index.html" class="main-nav__link">STARTSEITE</a>
+              <a href="courses.html" class="main-nav__link active">KURSE</a>
+              <a href="#footer" class="main-nav__link">KONTAKT</a>
+            </div>
+          </nav>
+
+          <button class="hero__burger" type="button"
+                  aria-expanded="false"
+                  aria-controls="main-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+    <main>
+        <!-- Hero Section mit rotem Blitz & modernem Stil -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt red-bolt hero-bolt"></i>
+                    <span>KURSE 2026</span>
+                </div>
+                <h1 class="hero-title">Finde deine Stärke.<br>Buche <span class="red-accent">deinen Kurs.</span></h1>
+                <p class="hero-sub">Strukturierte Trainingspläne, professionelle Anleitung und eine Community die pusht.</p>
+                <div class="hero-cta">
+                    <a href="#kursplan" class="btn-primary">ZUM KURSPLAN <i class="fas fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Einleitungsblock: Kurse & Termine mit Firmenphilosophie -->
+        <section class="intro-text">
+            <div class="container">
+                <div class="intro-card">
+                    <i class="fas fa-bolt red-bolt"></i>
+                    <h2>Kurse & Termine</h2>
+                    <p>Unsere Kursangebote verbinden effektives Training mit klaren Strukturen und persönlicher Betreuung.<br>
+                    Die festen Termine ermöglichen dir eine verlässliche Trainingsplanung – unabhängig von deinem aktuellen Fitnesslevel.<br>
+                    <strong>Wähle den passenden Kurs und starte dein Training mit System.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KURSPLAN 2026 - Grid mit allen Tagen (Animation) -->
+        <section class="schedule-section" id="kursplan">
+            <div class="container">
+                <div class="section-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Kursplan 2026</h2>
+                    <div class="red-line"></div>
+                </div>
+                <div class="schedule-grid">
+                    <!-- Montag -->
+                    <div class="schedule-card">
+                        <div class="day-name">MONTAG</div>
+                        <ul class="course-list">
+                            <li><span class="time">18:00 – 19:00</span> <span class="course-title">Spinning</span></li>
+                            <li><span class="time">19:30 – 20:30</span> <span class="course-title">Zumba</span></li>
+                        </ul>
+                    </div>
+                    <!-- Dienstag -->
+                    <div class="schedule-card">
+                        <div class="day-name">DIENSTAG</div>
+                        <ul class="course-list">
+                            <li><span class="time">16:30 – 17:30</span> <span class="course-title">Yoga</span></li>
+                            <li><span class="time">18:00 – 19:00</span> <span class="course-title">Power Dumbell</span></li>
+                        </ul>
+                    </div>
+                    <!-- Mittwoch -->
+                    <div class="schedule-card">
+                        <div class="day-name">MITTWOCH</div>
+                        <ul class="course-list">
+                            <li><span class="time">18:00 – 19:00</span> <span class="course-title">Yoga</span></li>
+                            <li><span class="time">19:30 – 20:30</span> <span class="course-title">Zumba</span></li>
+                        </ul>
+                    </div>
+                    <!-- Donnerstag -->
+                    <div class="schedule-card">
+                        <div class="day-name">DONNERSTAG</div>
+                        <ul class="course-list">
+                            <li><span class="time">18:00 – 19:00</span> <span class="course-title">Power Dumbell</span></li>
+                        </ul>
+                    </div>
+                    <!-- Freitag -->
+                    <div class="schedule-card rest-day">
+                        <div class="day-name">FREITAG</div>
+                        <div class="no-course"><i class="fas fa-ban"></i> Kein Kurs</div>
+                    </div>
+                    <!-- Samstag -->
+                    <div class="schedule-card">
+                        <div class="day-name">SAMSTAG</div>
+                        <div class="no-course"><i class="fas fa-ban"></i> Kein Kurs</div>
+                        </ul>
+                    </div>
+                    <!-- Sonntag -->
+                    <div class="schedule-card rest-day">
+                        <div class="day-name">SONNTAG</div>
+                        <div class="no-course"><i class="fas fa-spa"></i> Kein Kurs – Erholung</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detaillierte Kurskarten (Zumba, Power Pump, Indoor Cycling, Yoga) -->
+        <section class="courses-detail">
+            <div class="container">
+                <div class="section-header">
+                    <i class="fas fa-bolt red-bolt"></i>
+                    <h2>UNSERE KURSE IM DETAIL</h2>
+                    <div class="red-line"></div>
+                </div>
+                <div class="courses-grid">
+                    <!-- Zumba Card -->
+                    <div class="course-card">
+                        <div class="card-icon"><i class="fas fa-music"></i></div>
+                        <h3>Zumba</h3>
+                        <div class="course-times">
+                            <span><i class="far fa-clock"></i> Montag 19:30 – 20:30</span>
+                            <span><i class="far fa-clock"></i> Mittwoch 19:30 – 20:30</span>
+                        </div>
+                        <p>Energiegeladenes Gruppentraining mit Musik und einfachen Tanzbewegungen. Verbessert Ausdauer, Koordination und verbrennt Kalorien – mit maximalem Spaßfaktor. Ideal für alle Fitnesslevel.</p>
+                        <div class="card-footer"><i class="fas fa-fire"></i> Jederzeit einsteigen</div>
+                    </div>
+                    <!-- Power Pump Card -->
+                    <div class="course-card">
+                        <div class="card-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h3>Power Dumbell</h3>
+                        <div class="course-times">
+                            <span><i class="far fa-clock"></i> Dienstag 18:00 – 19:00</span>
+                            <span><i class="far fa-clock"></i> Donnerstag 18:00 – 19:00</span>
+                        </div>
+                        <p>Kraftorientiertes Workout mit Kurzhanteln für den gesamten Körper. Gezielter Muskelaufbau, Straffung und Leistungssteigerung in kurzer Zeit. Perfekt für alle, die effektiv trainieren möchten.</p>
+                        <div class="card-footer"><i class="fas fa-chart-line"></i> Steigere deine Kraft</div>
+                    </div>
+                    <!-- Indoor Cycling Card -->
+                    <div class="course-card">
+                        <div class="card-icon"><i class="fas fa-bicycle"></i></div>
+                        <h3>Spinning</h3>
+                        <div class="course-times">
+                            <span><i class="far fa-clock"></i> Montag 18:00 – 19:00</span>
+                        </div>
+                        <p>Dynamisches Ausdauertraining auf dem Bike mit motivierender Musik. Steigert Herz-Kreislauf-Leistung, Fettverbrennung und mentale Stärke. Intensität individuell anpassbar – für Einsteiger bis Fortgeschrittene.</p>
+                        <div class="card-footer"><i class="fas fa-heartbeat"></i> Verbrenne Kalorien</div>
+                    </div>
+                    <!-- Yoga Card -->
+                    <div class="course-card">
+                        <div class="card-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Yoga</h3>
+                        <div class="course-times">
+                            <span><i class="far fa-clock"></i> Dienstag 16:30 – 17:30</span>
+                            <span><i class="far fa-clock"></i> Mittwoch 18:00 – 19:00</span>
+                        </div>
+                        <p>Sanftes Yoga zur Förderung von Beweglichkeit, Körperwahrnehmung und innerer Ruhe. Gezielte Atemtechniken und fließende Bewegungen unterstützen Stressabbau und Regeneration. Optimal zum Abschalten.</p>
+                        <div class="card-footer"><i class="fas fa-leaf"></i> Neue Energie tanken</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wichtiger Hinweis: Whiteboard-Eintrag -->
+        <section class="notice-section">
+            <div class="container notice-container">
+                <div class="notice-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="notice-content">
+                        <h3>WICHTIG! PERSÖNLICHE ANMELDUNG</h3>
+                        <p>Bitte trage dich im Fitnessstudio <strong>neben der Theke auf dem Whiteboard</strong> zum gewünschten Kurs selbst ein. So garantieren wir eine faire Platzverteilung und du sicherst dir deinen Spot.</p>
+                    </div>
+                    <i class="fas fa-edit edit-icon"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mit Adresse, Kontakten (gemäß Vorgabe) -->
+    <footer id="footer" class="site-footer">
+      <div class="site-footer__col">
+      <a href="#" class="hero__logo">
+        <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+      </a>
+        <p class="site-footer__text">
+          Baue Kraft und Selbstvertrauen auf – in unserem Fitnessstudio mit modernster
+          Ausstattung, persönlicher Betreuung und einer inspirierenden Community.
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Adresse</h3>
+        <p class="site-footer__text">
+          Kurhessenstraße 5<br />
+          34346 Hann. Münden
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Kontakte</h3>
+        <p class="site-footer__text">
+          Mo – Fr &nbsp;&nbsp; 09:00 – 22:00<br />
+          Sa – So &nbsp;&nbsp; 09:00 – 17:00
+        </p>
+
+        <a class="site-footer__phone" href="tel:+4955418500">05541 8500</a>
+
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/lifestyle_fitnessclub_hmu" class="site-footer__social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <path d="M16.5 7.5h.01"></path>
+              <circle cx="12" cy="12" r="3.5"></circle>
+            </svg>
+          </a>
+
+          <a href="https://www.facebook.com/lifestylefitnessclub" class="site-footer__social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 3h-3a4 4 0 0 0-4 4v3H8v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3V3z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+<script>
+  const burger = document.querySelector('.hero__burger');
+  const menu = document.querySelector('.main-nav__menu');
+
+  burger.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    burger.classList.toggle('is-active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('is-open');
+      burger.classList.remove('is-active');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+</body>
+</html>

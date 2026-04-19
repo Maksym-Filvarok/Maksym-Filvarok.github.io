@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Hero Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="hero__nav">
+      <a href="index.html" class="hero__logo">
+        <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+      </a>
+
+      <button class="hero__burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="hero-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="hero__nav-links" id="hero-menu">
+        <a href="index.html" class="hero__nav-link hero__nav-link--active">STARTSEITE</a>
+        <a href="courses.html" class="hero__nav-link">KURSE</a>
+        <a href="#footer" class="hero__nav-link">KONTAKT</a>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <div class="hero__text">
+        <p class="hero__lead">DEIN WEG ZUM</p>
+        <h1 class="hero__title">STARKEN KÖRPER</h1>
+
+        <p class="hero__subtitle">
+          WERDE ZU DER BESTEN VERSION VON DIR SELBST IM LIFESTYLE FITNESSSCLUB
+        </p>
+        <p class="hero__subtitle hero__subtitle--small">
+          DAS BESTE FITNESSSTUDIO IN HANN. MÜNDEN UND UMGEBUNG
+        </p>
+
+        <a href="courses.html" class="hero__button">UNSERE KURSE ENTDECKEN</a>
+      </div>
+    </div>
+  </header>
+  <section class="benefits" aria-labelledby="benefits-title">
+  <div class="benefits__container">
+    <h2 class="benefits__title" id="benefits-title">Deine Vorteile bei uns</h2>
+
+    <div class="benefits__grid">
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <!-- Ruler / training area icon -->
+          <img src="icons/ruler.svg" alt="">
+        </div>
+
+        <div class="benefit-card__content">
+          <h3>ca. 1000 m² Trainingsfläche</h3>
+          <p>Großzügige Trainingsfläche mit ausreichend Abstand zwischen den Geräten</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <!-- Dumbbell icon -->
+          <img src="icons/zones.svg" alt="">
+        </div>
+
+        <div class="benefit-card__content">
+          <h3>Über 100 Trainingsgeräte</h3>
+          <p>Keine Wartezeiten an den Geräten. Premium-Ausstattung von Life Fitness, Hammer Strength, Technogym Panatta</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <!-- Fitness / zones icon -->
+          <img src="icons/group.svg" alt="">
+        </div>
+
+        <div class="benefit-card__content">
+          <h3>3 fitness zones</h3>
+          <p>Alles von Cardio über Functional Training bis hin zu Cycling. Ergänzt durch einen separaten Kursraum für Yoga und weitere Gruppentrainingseinheiten</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-card__icon" aria-hidden="true">
+          <!-- Sauna / recovery icon -->
+          <img src="icons/solarium.svg" alt="">
+        </div>
+
+        <div class="benefit-card__content">
+          <h3>Sauna & Solarium</h3>
+          <p>Perfekte Erholung nach dem Training – entspanne in unserer Sauna oder tanke neue Energie im Solarium</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="membership">
+  <div class="membership__container">
+    <h2 class="membership__title">Mitgliedschaft im Fitnessstudio</h2>
+
+<div class="membership__grid">
+
+  <!-- Students -->
+  <article class="plan-card">
+    <header class="plan-card__header">
+      <h3 class="plan-card__name">Schüler / Studenten / Azubis</h3>
+      <div class="plan-card__price">31,99€ / Monat</div>
+    </header>
+
+    <div class="plan-card__body">
+      <ul class="plan-card__list">
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>12 Monate Vertragslaufzeit</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Unbegrenzter Zugang zum Fitnessstudio</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Perfekt für Schüler, Studenten und Auszubildende</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Top Preis-Leistungs-Verhältnis für deinen Start</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Adults 12 -->
+  <article class="plan-card">
+    <header class="plan-card__header">
+      <h3 class="plan-card__name">Erwachsene – Flexibel</h3>
+      <div class="plan-card__price">40,99€ / Monat</div>
+    </header>
+
+    <div class="plan-card__body">
+      <ul class="plan-card__list">
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>12 Monate Vertragslaufzeit</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Volle Nutzung aller Trainingsbereiche</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Modernste Geräte & angenehme Trainingsatmosphäre</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Ideal für alle, die flexibel bleiben wollen</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Adults 24 -->
+  <article class="plan-card">
+    <header class="plan-card__header">
+      <h3 class="plan-card__name">Erwachsene – Best Deal</h3>
+      <div class="plan-card__price">35,99€ / Monat</div>
+    </header>
+
+    <div class="plan-card__body">
+      <ul class="plan-card__list">
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>24 Monate Vertragslaufzeit</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Maximale Ersparnis bei langfristigem Training</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Unbegrenzter Zugang zu allen Bereichen</span>
+        </li>
+
+        <li class="plan-card__item">
+          <span class="plan-card__icon">✔</span>
+          <span>Keine Startgebühren oder versteckte Kosten</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+</div>
+</section>
+<section class="about-section">
+  <div class="about-section__container">
+    <div class="about-section__top">
+      <div class="about-section__content">
+        <h2 class="about-section__title">Über uns</h2>
+
+        <p class="about-section__text">
+          Fitness ist für uns mehr als nur ein Trend. Es geht um Gesundheit,
+          Wohlbefinden und Selbstvertrauen. Jeder soll sich bei uns gut fühlen
+          und sein eigenes Tempo finden.
+        </p>
+
+        <p class="about-section__text">
+          Bei Lifestyle Fitnessclub Hann. Münden steht nicht der perfekte Körper
+          im Mittelpunkt, sondern der Mensch. Wir legen Wert auf eine
+          motivierende Atmosphäre, in der sich Anfänger und Profis gleichermaßen
+          wohlfühlen.
+        </p>
+
+        <p class="about-section__text">
+          Gemeinsam schaffen wir eine Community, die inspiriert und unterstützt.
+          So wird Training zu einem festen Bestandteil deines Lebens – nachhaltig,
+          effektiv und mit Freude in einem familiären Fitnessstudio.
+        </p>
+      </div>
+
+      <div class="about-section__gallery">
+        <div class="swiper aboutSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/gallery1.png" alt="Fitnessstudio Innenraum" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery2.png" alt="Trainingsbereich im Studio" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery3.png" alt="Rezeption und Lounge" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/gallery4.png" alt="Studio Atmosphäre" />
+            </div>
+          </div>
+
+          <div class="about-section__pagination"></div>
+
+          <button class="about-section__nav about-section__prev" type="button" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+
+          <button class="about-section__nav about-section__next" type="button" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+      <div class="site-footer__col">
+      <a href="#" class="hero__logo">
+        <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+      </a>
+        <p class="site-footer__text">
+          Baue Kraft und Selbstvertrauen auf – in unserem Fitnessstudio mit modernster
+          Ausstattung, persönlicher Betreuung und einer inspirierenden Community.
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Adresse</h3>
+        <p class="site-footer__text">
+          Kurhessenstraße 5<br />
+          34346 Hann. Münden
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Kontakte</h3>
+        <p class="site-footer__text">
+          Mo – Fr &nbsp;&nbsp; 09:00 – 22:00<br />
+          Sa – So &nbsp;&nbsp; 09:00 – 17:00
+        </p>
+
+        <a class="site-footer__phone" href="tel:+4955418500">05541 8500</a>
+
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/lifestyle_fitnessclub_hmu" class="site-footer__social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <path d="M16.5 7.5h.01"></path>
+              <circle cx="12" cy="12" r="3.5"></circle>
+            </svg>
+          </a>
+
+          <a href="https://www.facebook.com/lifestylefitnessclub" class="site-footer__social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 3h-3a4 4 0 0 0-4 4v3H8v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3V3z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="site-footer__bottom">
+      <a href="impressum.html">Impressum</a>
+      <p>© 2026 Lifestyle Fitnessclub</p>
+    </div>
+
+  </div>
+</section>
+<button class="scroll-top" id="scrollTopBtn" aria-label="Повернутися вгору">
+  <svg class="scroll-top__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path class="icon-arrow" d="M12 19V5M5 12l7-7 7 7" />
+    <path class="icon-bolt" d="M13 2L6 13h5l-1 9 8-12h-5l0-8z" />
+  </svg>
+</button>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <link rel="stylesheet" href="impressum.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-container">
+          <a href="index.html" class="hero__logo">
+            <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+          </a>
+
+          <nav class="main-nav" aria-label="Головна навігація">
+            <div class="main-nav__menu" id="main-menu">
+              <a href="index.html" class="main-nav__link">STARTSEITE</a>
+              <a href="courses.html" class="main-nav__link">KURSE</a>
+              <a href="#footer" class="main-nav__link">KONTAKT</a>
+            </div>
+          </nav>
+
+          <button class="hero__burger" type="button"
+                  aria-label="Відкрити меню"
+                  aria-expanded="false"
+                  aria-controls="main-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+    </header>
+
+    <main class="impressum-container">
+        <h1>Impressum</h1>
+
+        <section>
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+                LifeStyle Fitnessclub<br>
+                Kurhessenstraße 5<br>
+                34346, Hann. Münden<br>
+                Deutschland
+            </p>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+            <p>
+                Telefon: 05541 8500<br>
+                E-Mail: info@email.com
+            </p>
+        </section>
+
+        <section>
+            <h2>Vertreten durch</h2>
+            <p>
+                Hassan Atieh
+            </p>
+        </section>
+
+        <section>
+            <h2>Umsatzsteuer-ID</h2>
+            <p>
+                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                DE123456789
+            </p>
+        </section>
+
+        <section>
+            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>
+                Hassan Atieh<br>
+                Kurhessenstraße 5<br>
+                34346, Hann. Münden
+            </p>
+        </section>
+
+        <section>
+            <h2>Haftung für Inhalte</h2>
+            <p>
+                Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+            </p>
+        </section>
+
+        <section>
+            <h2>Haftung für Links</h2>
+            <p>
+                Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr.
+            </p>
+        </section>
+
+        <section>
+            <h2>Urheberrecht</h2>
+            <p>
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+            </p>
+        </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <div class="site-footer__col">
+      <a href="#" class="hero__logo">
+        <img src="img/logo.png" alt="Logo" class="hero__logo-img">
+      </a>
+        <p class="site-footer__text">
+          Baue Kraft und Selbstvertrauen auf – in unserem Fitnessstudio mit modernster
+          Ausstattung, persönlicher Betreuung und einer inspirierenden Community.
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Adresse</h3>
+        <p class="site-footer__text">
+          Kurhessenstraße 5<br />
+          34346 Hann. Münden
+        </p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">Kontakte</h3>
+        <p class="site-footer__text">
+          Mo – Fr &nbsp;&nbsp; 09:00 – 22:00<br />
+          Sa – So &nbsp;&nbsp; 09:00 – 17:00
+        </p>
+
+        <a class="site-footer__phone" href="tel:+4955418500">05541 8500</a>
+
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/lifestyle_fitnessclub_hmu" class="site-footer__social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <path d="M16.5 7.5h.01"></path>
+              <circle cx="12" cy="12" r="3.5"></circle>
+            </svg>
+          </a>
+
+          <a href="https://www.facebook.com/lifestylefitnessclub" class="site-footer__social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 3h-3a4 4 0 0 0-4 4v3H8v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3V3z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+<script>
+  const burger = document.querySelector('.hero__burger');
+  const menu = document.querySelector('.main-nav__menu');
+
+  burger.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    burger.classList.toggle('is-active', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('is-open');
+      burger.classList.remove('is-active');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+</body>
+</html>
